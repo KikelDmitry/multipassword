@@ -1,3 +1,10 @@
+@use 'sass:math';
+
+// rem size calc
+@function rem($px) {
+	@return (math.div($px, $root-font-size)) + rem;
+}
+
 // desktop first (max-width)
 @mixin df($size) {
 	@media (max-width: $size + px) {
@@ -19,3 +26,18 @@
 	}
 }
 
+// position absolute full size
+@mixin absoluteFull() {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+}
+
+// dotted end crop text
+@mixin dottedEnd() {
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+}

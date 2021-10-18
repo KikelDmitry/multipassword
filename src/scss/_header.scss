@@ -1,0 +1,40 @@
+.header {
+	min-height: 64px;
+	padding: 12px 0;
+	background-color: $color-violet-dark;
+	color: $color-white;
+
+	&__title {
+		position: relative;
+		display: flex;
+		align-items: center;
+	}
+	&__logo {
+		@include media-breakpoint-up(lg) {
+		}
+	}
+	&__name {
+		display: none;
+		
+		span {
+			color: #7D96FF;
+		}
+		&::after {
+			content: '';
+			@include absoluteFull;			
+		}
+		@include media-breakpoint-up(lg) {
+			display: block;
+			margin-left: 10px;
+			font-family: $font-ubuntu;
+			font-size: rem(20);
+			line-height: rem(23);
+			font-weight: 500;
+			text-decoration: none;
+			color: inherit;
+		}
+	}
+	&__slogan {
+
+	}
+}

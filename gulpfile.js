@@ -17,6 +17,7 @@ const gulpSass = require('gulp-sass')(require('sass'));
 const postcss = require('gulp-postcss');
 const autoprefixer = require('autoprefixer');
 const csso = require('postcss-csso');
+const tilde = require('node-sass-tilde-importer');
 
 //js
 const minify = require('gulp-minify');
@@ -72,7 +73,8 @@ const scss = () => {
 	return src(globs.scss)
 		.pipe(sourcemaps.init())
 		.pipe(gulpSass({
-			outputStyle: 'expanded'
+			outputStyle: 'expanded',
+			importer: tilde
 		}))
 		.on('error', gulpSass.logError)
 		.pipe(postcss([

@@ -1,8 +1,7 @@
-extends _layout/base.pug
+extends _layout/homepage.pug
 
 block meta
 	- config.page.title = 'Home page';
 	- config.page.description = 'Home page description';
 
-block body
-	h1(style="position:absolute;top:50%;left:50%;transform:translate(-50%, -50%);text-align:center") #{config.title}
+block content

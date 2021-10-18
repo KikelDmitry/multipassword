@@ -1,0 +1,41 @@
+.footer {
+	min-height: 100px;
+	margin-top: auto;
+
+	&__top {
+		padding-top: 22px;
+		padding-bottom: 22px;
+		border-top: 1px solid $color-gray-lighter;
+	}
+}
+.footer-menu {
+	&__title {
+		margin-bottom: 16px;
+		color: $color-violet-dull-darker;
+		font-size: rem(17);
+		font-weight: 500;
+		line-height: rem(20);
+	}
+	&__list {
+		padding-left: 0;
+
+		&:not(:last-child) {
+			margin-bottom: 16px;
+		}
+	}
+	&__item {
+		&:not(:last-child) {
+			margin-bottom: 6px;
+		}
+	}
+	&__link {
+		color: $color-violet-dark;
+		text-decoration: none;
+		font-size: rem(14);
+		line-height: rem(16);
+
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+}

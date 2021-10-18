@@ -1,0 +1,92 @@
+-
+	var footerMenu = [
+		{
+			title: 'Компания',
+			items: [
+				{
+					title: 'Партнерам',
+					url: '#',
+				},
+				{
+					title: 'Пресса',
+					url: '#',
+				},
+				{
+					title: 'Контакты',
+					url: '#',
+				},
+			]
+		},
+		{
+			title: 'Подробнее',
+			items: [
+				{
+					title: 'Возможности',
+					url: '#',
+				},
+				{
+					title: 'Как это работает',
+					url: '#',
+				},
+				{
+					title: 'Почему это безопасно',
+					url: '#',
+				},
+				{
+					title: 'Тарифы',
+					url: '#',
+				},
+				{
+					title: 'Генератор паролей',
+					url: '#',
+				},
+			]
+		},
+		{
+			title: 'Скачать',
+			items: [
+				{
+					title: 'Windows',
+					url: '#',
+				},
+				{
+					title: 'MacOS',
+					url: '#',
+				},
+				{
+					title: 'Android',
+					url: '#',
+				},
+				{
+					title: 'Linux',
+					url: '#',
+				},
+				{
+					title: 'Браузеры',
+					url: '#',
+				},
+			]
+		},
+		{
+			title: 'Поддержка',
+			items: [
+				{
+					title: 'Помощь',
+					url: '#',
+				},
+			]
+		},
+	]
+
+footer.footer
+	.footer__top
+		.container-xl
+			.row
+				each col in footerMenu
+					nav.footer-menu.col-12.col-md-6.col-lg-3
+						h4.footer-menu__title #{col.title}
+						ul.footer-menu__list
+							each item in col.items
+								li.footer-menu__item
+									a.footer-menu__link(href=item.url) #{item.title} 
+	.footer__bottom 
