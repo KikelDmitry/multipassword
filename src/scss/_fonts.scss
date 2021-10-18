@@ -1,4 +1,4 @@
-$font-path: "../fonts/";
+$font-path: "../fonts/" !default;
 
 $font-roboto-list: (
 	("Roboto-Thin", 100, normal),
@@ -18,7 +18,8 @@ $font-roboto-list: (
 @each $name, $weight, $style in $font-roboto-list {
 	@font-face {
 		font-family: "Roboto";
-		src: url($font-path + 'roboto/' + $name + ".woff2") format("woff2"), url($font-path + $name + ".woff") format("woff");
+		src: url($font-path + "roboto/" + $name + ".woff2") format("woff2"),
+			url($font-path + $name + ".woff") format("woff");
 		font-weight: $weight;
 		font-style: $style;
 		font-display: swap;
@@ -32,18 +33,26 @@ $font-ubuntu-list: (
 	("Ubuntu-Medium", 500, normal),
 	("Ubuntu-MediumItalic", 500, italic),
 	("Ubuntu-Bold", 700, normal),
-	("Ubuntu-BoldItalic", 700, italic),
+	("Ubuntu-BoldItalic", 700, italic)
 );
 @each $name, $weight, $style in $font-ubuntu-list {
 	@font-face {
 		font-family: "Ubuntu";
-		src: url($font-path + 'ubuntu/' + $name + ".woff2") format("woff2"), url($font-path + $name + ".woff") format("woff");
+		src: url($font-path + "ubuntu/" + $name + ".woff2") format("woff2"),
+			url($font-path + $name + ".woff") format("woff");
 		font-weight: $weight;
 		font-style: $style;
 		font-display: swap;
 	}
 }
 
+@font-face {
+	font-family: "iconfont";
+	src: url($font-path + "iconfont.woff") format("woff");
+	font-display: swap;
+}
+
 // fonts variables
 $font-roboto: "Roboto", "Helvetica", "Arial", sans-serif;
 $font-ubuntu: "Ubuntu", "Helvetica", "Arial", sans-serif;
+$font-icons: "iconfont", sans-serif;

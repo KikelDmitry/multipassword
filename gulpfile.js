@@ -26,6 +26,9 @@ const minify = require('gulp-minify');
 const imagemin = require('gulp-imagemin');
 const imageminPngquant = require('imagemin-pngquant');
 
+//iconfont
+const iconfont = require('gulp-iconfont');
+
 //CONFIG
 
 const config = {
@@ -38,10 +41,15 @@ const globs = {
 		'!' + config.src + 'pug/**/_*/*.pug',
 	],
 	scss: config.src + 'scss/main.scss',
-	js: config.src + 'js/**/*.js',
+	js: [
+		config.src + 'js/**/main.js',
+	],
 	images: [
 		config.src + 'img/**/*.{png,jpg,jpeg,svg,gif}',
-		'!' + config.src + 'img/sprite/**/*.svg'
+		'!' + config.src + 'img/icons/**/*.svg'
+	],
+	icons: [
+		config.src + 'img/icons/**/*.svg',
 	],
 	fonts: config.src + 'fonts/**/*.*',
 }
@@ -122,6 +130,21 @@ const images = () => {
 };
 exports.images = images;
 
+const icons = () => {
+	return src(globs.icons)
+		.pipe(iconfont({
+			fontName: 'iconfont',
+			prependUnicode: true,
+			formats: ['woff'],
+		}))
+		.on('glyphs', function (glyphs, options) {
+			// CSS templating, e.g.
+			console.log(glyphs, options);
+		})
+		.pipe(dest(config.dest + 'fonts'));
+}
+exports.icons = icons;
+
 const fonts = () => {
 	return src(globs.fonts)
 		.pipe(dest(config.dest + 'fonts'))
@@ -131,6 +154,7 @@ const watcher = () => {
 	watch(config.src + 'pug/**/*.pug', pug)
 	watch(config.src + 'scss/**/*.scss', scss)
 	watch(globs.js, scripts)
+	// watch(globs.icons, icons)
 	watch(globs.images, images)
 };
 
@@ -157,6 +181,7 @@ exports.build = series(
 		),
 		scripts,
 		images,
+		// icons,
 		fonts
 	)
 );

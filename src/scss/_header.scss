@@ -10,15 +10,10 @@
 		align-items: center;
 	}
 	&__logo {
-		@include media-breakpoint-up(lg) {
-		}
 	}
 	&__name {
 		display: none;
 		
-		span {
-			color: #7D96FF;
-		}
 		&::after {
 			content: '';
 			@include absoluteFull;			
@@ -26,6 +21,7 @@
 		@include media-breakpoint-up(lg) {
 			display: block;
 			margin-left: 10px;
+			margin-bottom: 5px;
 			font-family: $font-ubuntu;
 			font-size: rem(20);
 			line-height: rem(23);
@@ -33,8 +29,14 @@
 			text-decoration: none;
 			color: inherit;
 		}
+		span {
+			color: #7D96FF;
+		}
+		&:hover {
+			color: inherit;
+		}
 	}
 	&__slogan {
-
+		color: $color-violet-lighter;
 	}
 }

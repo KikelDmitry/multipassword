@@ -1,0 +1,39 @@
+-
+	var langs = [
+		{
+			title: 'English',
+			code: 'gb',
+		},
+		{
+			title: 'Russian',
+			code: 'ru',
+		},
+		{
+			title: 'German',
+			code: 'de',
+		},
+		{
+			title: 'France',
+			code: 'fr',
+		},
+		{
+			title: 'Turkish',
+			code: 'tr',
+		},
+		{
+			title: 'Chineese',
+			code: 'cn',
+		},
+	];
+.lang-dropdown.dropdown
+	button.lang-dropdown__btn.dropdown-toggle(type="button" title="Change language" data-bs-toggle="dropdown" aria-expanded="false") 
+		span.lang-dropdown__flag
+			img(src="img/flags/" + langs[0].code.toUpperCase() + ".svg" alt=langs[0].title + " flag")
+		span.lang-dropdown__lang #{langs[0].title}
+		+icon('lang-dropdown__caret fa fa-caret-down')
+	ul.lang-dropdown__list.dropdown-menu
+		each lang in langs
+			li.lang-dropdown__item
+				span.lang-dropdown__flag
+					img(src="img/flags/" + lang.code.toUpperCase() + ".svg" alt=lang.title + " flag")
+				a.lang-dropdown__link(href="#") #{lang.title}

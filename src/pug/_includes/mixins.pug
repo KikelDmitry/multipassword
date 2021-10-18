@@ -17,3 +17,7 @@ mixin svg(classes, anchor, title, desc, attrObj)
 				'aria-role': 'image'
 			}
 		)
+	
+//- icon fonts
+mixin icon(classes, title = false)
+	i(class=classes aria-hidden="true" title=title)
