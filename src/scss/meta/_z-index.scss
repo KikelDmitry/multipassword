@@ -1,0 +1,20 @@
+$z-index: (
+	immortal: 9999,
+	popup: 100,
+	tooltip: 10,
+	dropdown: 5,
+	wrapper: 1,
+	default: 0,
+	under: -1,
+);
+
+@function z($key) {
+	@if map-has-key($z-index, $key) {
+		@return map-get($z-index, $key);
+	}
+	@warn "Значения `#{$key}` нет в $z-index-списке, см. файл src/meta/_z-index.scss";
+	@return null;
+}
+
+// using:
+// z-index: z(tooltip)

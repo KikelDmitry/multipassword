@@ -1,0 +1,45 @@
+$font-path: "../fonts/";
+
+$font-roboto-list: (
+	("Roboto-Thin", 100, normal),
+	("Roboto-ThinItalic", 100, italic),
+	("Roboto-Light", 300, normal),
+	("Roboto-LightItalic", 300, italic),
+	("Roboto-Regular", normal, normal),
+	("Roboto-RegularItalic", normal, italic),
+	("Roboto-Medium", 500, normal),
+	("Roboto-MediumItalic", 500, italic),
+	("Roboto-Bold", 700, normal),
+	("Roboto-BoldItalic", 700, italic),
+	("Roboto-Black", 900, normal),
+	("Roboto-BlackItalic", 900, italic)
+);
+
+@each $name, $weight, $style in $font-roboto-list {
+	@font-face {
+		font-family: "Roboto";
+		src: url($font-path + 'roboto/' + $name + ".woff2") format("woff2"), url($font-path + $name + ".woff") format("woff");
+		font-weight: $weight;
+		font-style: $style;
+		font-display: swap;
+	}
+}
+$font-ubuntu-list: (
+	("Ubuntu-Light", 300, normal),
+	("Ubuntu-LightItalic", 300, italic),
+	("Ubuntu-Regular", normal, normal),
+	("Ubuntu-Italic", normal, italic),
+	("Ubuntu-Medium", 500, normal),
+	("Ubuntu-MediumItalic", 500, italic),
+	("Ubuntu-Bold", 700, normal),
+	("Ubuntu-BoldItalic", 700, italic),
+);
+@each $name, $weight, $style in $font-ubuntu-list {
+	@font-face {
+		font-family: "Ubuntu";
+		src: url($font-path + 'ubuntu/' + $name + ".woff2") format("woff2"), url($font-path + $name + ".woff") format("woff");
+		font-weight: $weight;
+		font-style: $style;
+		font-display: swap;
+	}
+}

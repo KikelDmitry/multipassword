@@ -1,0 +1,41 @@
+//- title
+if config.page.title
+	title=config.page.title + ' - ' + config.title
+else 
+	title=config.title
+
+meta(charset="UTF-8")
+meta(name="viewport" content="width=device-width, initial-scale=1")
+
+if config.noIndex
+	meta(name="robots" content="none")
+
+if config.page.description
+	meta(name="description" content=config.page.description + ' | ' + config.description)
+else
+	meta(name="description" content=config.description)
+
+if config.color	
+	meta(name="theme-color" content=config.color)
+else
+	meta(name="theme-color" content="#ffffff")
+
+//- favicon
+link(rel="shortcut icon" href="/img/favicon.svg" type="image/svg+xml")
+
+//- open graph
+if config.og
+	meta(name="og:title" content=config.og.title)
+	meta(name="og:image" content=config.og.image)
+
+//-twitter card
+if config.twitter
+	meta(name="twitter:card" content="summary")
+	meta(name="twitter:site" content=config.twitter.creator)
+	meta(name="twitter:creator" content=config.twitter.creator)
+
+//- styles
+block css
+	link(rel="stylesheet" href="/css/main.css")
+block styles
+
