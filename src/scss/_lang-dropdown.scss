@@ -13,6 +13,9 @@
 		&::after {
 			display: none;
 		}
+		&:hover {
+			background-color: lighten($color-gray-lightest, 1%);
+		}
 		&.show {
 			background-color: $color-gray-lighter;
 			.lang-dropdown__caret {
@@ -34,6 +37,7 @@
 		left: 0 !important;
 		right: 0 !important;
 		font-size: inherit;
+		overflow: hidden;
 	}
 	&__item {
 		position: relative;
@@ -46,13 +50,16 @@
 		}
 	}
 	&__flag {
+		flex: 0 0 auto;
 		width: 18px;
 		height: 12px;
 		margin: 0 7px;
+		font-size: 10px;
 	}
 	&__link {
 		text-decoration: none;
 		color: $color-violet-dark;
+		@include dottedEnd;
 
 		&::after {
 			content: "";

@@ -1,0 +1,29 @@
+-
+	var menu = [
+		{
+			title: 'Features',
+			url: '#',
+		},
+		{
+			title: 'How it works',
+			url: '#',
+		},
+		{
+			title: 'Download',
+			url: '#',
+		},
+		{
+			title: 'Plans',
+			url: '#',
+		},
+	]
+nav.header-nav
+	ul.header-nav__list#main-menu
+		each item in menu
+			li.header-nav__item
+				a.header-nav__link(href=item.url) #{item.title}
+	a.header-nav__signin(href="#")
+		+icon('fas fa-sign-in-alt')
+		span Sign in
+	button.header-nav__burger.d-md-none#burger-btn(type="button" aria-label="Open menu")
+		+icon('fa fa-bars')
