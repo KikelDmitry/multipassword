@@ -1,0 +1,29 @@
+.home-hero {
+	overflow: hidden;
+	background-color: $color-violet-dark;
+	color: $color-white;
+
+	&__banner {
+
+		&-img {
+			@include media-breakpoint-up(xl) {
+				max-width: none;
+			}
+		}
+	}
+	&__main {
+		padding-left: 7px;
+	}
+	&__title {
+	}
+	&__signup {
+		background-color: $color-white;
+		color: $color-violet-dark;
+		border: 1px solid #4d67d5;
+
+		i {
+			background-color: $color-violet-lighter;
+			color: $color-violet;
+		}
+	}
+}

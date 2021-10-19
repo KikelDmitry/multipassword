@@ -1,11 +1,23 @@
-header.header
-	.container-xl
-		.row.align-items-center.flex-nowrap
-			.header__title.col-auto
-				.header__logo
-					img(src="img/logo.svg" alt="MultiPassword logo" width="40" height="40")
-				a.header__name(href="index.html") multi
-					span password
-			.header__slogan.col-auto.d-none.d-md-block Secured password manager
-			.header__nav.col-auto.ms-auto
-				include header-nav.pug
+if isHomepage
+	header.header.header--home
+		.container-xl
+			.row.align-items-center.flex-nowrap
+				.header__title.col-auto.col-xl-4
+					.header__logo
+						img(src="img/logo.svg" alt="MultiPassword logo" width="64" height="64")
+					a.header__name(href="index.html") multi
+						span password
+				.header__nav.col.col-xl-8
+					include header-nav.pug
+else
+	header.header
+		.container-xl
+			.row.align-items-center.flex-nowrap
+				.header__title.col-auto
+					.header__logo
+						img(src="img/logo.svg" alt="MultiPassword logo" width="40" height="40")
+					a.header__name(href="index.html") multi
+						span password
+				.header__slogan.col-auto.d-none.d-md-block Secured password manager
+				.header__nav.col-auto.ms-auto
+					include header-nav.pug

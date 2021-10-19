@@ -40,4 +40,26 @@
 	&__slogan {
 		color: $color-violet-lighter;
 	}
+	// header--home
+	&--home {
+		// min-height: 94px;
+		padding: 15px 0;
+		box-shadow: none;
+
+		.header__logo {
+			@include media-breakpoint-down(xl) {
+				width: 40px;
+				height: 40px;
+			}
+		}
+		.header__name {
+			@include media-breakpoint-up(xl) {
+				margin-bottom: 8px;
+				font-size: rem(38);
+				line-height: rem(44);
+				letter-spacing: -0.03em;
+			}
+		}
+
+	}
 }

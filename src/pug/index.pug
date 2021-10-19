@@ -3,5 +3,8 @@ extends _layout/homepage.pug
 block meta
 	- config.page.title = 'Home page';
 	- config.page.description = 'Home page description';
+	- var isHomepage = true;
 
-block content
+block main
+	main.main.main--home
+		include _includes/hero.pug

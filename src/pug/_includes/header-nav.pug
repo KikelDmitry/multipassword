@@ -17,7 +17,7 @@
 			url: '#',
 		},
 	]
-nav.header-nav
+nav.header-nav(class=(isHomepage ? 'header-nav--home' : ''))
 	ul.header-nav__list#main-menu
 		each item in menu
 			li.header-nav__item
