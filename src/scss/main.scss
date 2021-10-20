@@ -1,5 +1,4 @@
 @import "meta/_meta.scss";
-@import "_resets.scss";
 @import "_fonts.scss";
 @import "_icons.scss";
 
@@ -10,6 +9,7 @@
 @import url("https://use.fontawesome.com/releases/v5.14.0/css/all.css");
 
 // BASE
+@import "_resets.scss";
 @import "_common.scss";
 @import "_header.scss";
 @import "_header-nav.scss";
@@ -18,7 +18,9 @@
 
 // HOME
 
-@import "_hero.scss";
-@import "_how-its-work.scss";
+@import "home/_hero.scss";
+@import "home/_how-its-work.scss";
+@import "home/_why-its-safe.scss";
+@import "home/_features.scss";
 
 // @import "_debug.scss";

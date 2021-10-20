@@ -1,0 +1,31 @@
+-
+	var features = [
+		{
+			icon: 'strong.svg',
+			text: 'High security',
+		},
+		{
+			icon: 'sync.svg',
+			text: 'Multiple devices',
+		},
+		{
+			icon: 'import.svg',
+			text: 'Synchronization',
+		},
+		{
+			icon: 'autofill.svg',
+			text: 'Convenient interface',
+		},
+	]
+
+section.features-home
+	.container-xl
+		h2.features-home__title.section-title.title-2 Features
+		ul.features-home__list.row
+			each feature, idx in features
+				li.col-12.col-md-4.col-lg-3(class=(idx % 2 === 0 ? 'offset-md-2 offset-lg-0' : ''))
+					.home-feature
+						.home-feature__icon
+							img.home-feature__icon-img(src="img/features/" + feature.icon alt="Feature icon")
+						.home-feature__text #{feature.text}
+		a.features-home__more.more-btn(href="#") Learn more 

@@ -24,6 +24,9 @@
 			@include media-breakpoint-up(xl) {
 				max-width: none;
 			}
+			@include media-breakpoint-up(xxl) {
+				margin-left: 0;
+			}
 		}
 	}
 	&__main {
@@ -101,8 +104,6 @@
 		}
 	}
 	&__features {
-		padding: 0;
-		margin: 0;
 		margin-bottom: 30px;
 
 		@include media-breakpoint-up(xl) {
