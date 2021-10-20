@@ -1,0 +1,35 @@
+-
+	var list = [
+		{
+			icon: 'hiw_doc.svg',
+			text: 'Sign up MultiPassword',
+		},
+		{
+			icon: 'hiw_chat.svg',
+			text: 'Add passwords',
+		},
+		{
+			icon: 'hiw_device.svg',
+			text: 'Use MultiPassword on any device',
+		},
+		{
+			icon: 'hiw_bulb.svg',
+			text: 'The password manager will automatically prompt the right password',
+		},
+	];
+section.how-its-work
+	.container-xl
+		.row.align-items-md-center
+			.col-12.col-md-8.col-lg-9.col-xl-10
+				h2.how-its-work__title.section-title.title-2 How does MultiPassword work?
+			.col-12.col-md-4.col-lg-3.col-xl-2
+				a.how-its-work__more.more-btn(href="#") Learn more 
+		ol.how-its-work__list.row
+			each item in list
+				li.col-12.col-md-6.col-xl-3
+					.hiw-item
+						.hiw-item__icon
+							img.hiw-item__icon-img(src="img/hiw/" + item.icon alt="How it's work icon")
+						.hiw-item__text !{item.text.replace('MultiPassword', '<strong>MultiPassword</strong>')}
+
+
