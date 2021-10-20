@@ -1,12 +1,22 @@
+-
+	var features = [
+		'MultiPassword is a secure encrypted password manager.',
+		'Reliably store your passwords, credit card details, and other important information.',
+		'MultiPassword is a secure, reliable password and login manager.',
+	];
 section.home-hero
 	.container-xl
-		.row
-			.col-12.col-md-6.col-lg-4
+		.row.flex-column-reverse.flex-lg-row
+			.col-12.col-lg-4
 				.home-hero__banner
 					img.home-hero__banner-img(src="img/phone.png" alt="phone and desktop image" width="359" height="230")
-			.col-12.col-md-6.col-lg-4
+			.col-12.col-lg-8
 				.home-hero__main
-					h1.home-hero__title Secured password manager
+					h1.home-hero__title.title-1 Secured password manager
+					ul.home-hero__features
+						each item in features
+							li.home-hero__features-item #{item}
 					a.home-hero__signup.iconed-btn(href="#")
 						+icon('fa fa-user-plus iconed-btn__icon')
 						span.iconed-btn__text Sign up
+

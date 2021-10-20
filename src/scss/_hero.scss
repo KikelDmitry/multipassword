@@ -3,27 +3,134 @@
 	background-color: $color-violet-dark;
 	color: $color-white;
 
+	@include media-breakpoint-up(md) {
+		background-image: url(#{$img-path}hero-bg_xs.svg);
+		background-repeat: no-repeat;
+		background-position: right -80px center;
+	}
+	@include media-breakpoint-up(lg) {
+		background-position: right -47px bottom -60px;
+	}
+	@include media-breakpoint-up(xl) {
+		background-image: none;
+	}
 	&__banner {
+		height: 100%;
+		display: flex;
 
 		&-img {
+			margin: auto auto 0;
+
 			@include media-breakpoint-up(xl) {
 				max-width: none;
 			}
 		}
 	}
 	&__main {
+		display: grid;
 		padding-left: 7px;
+		grid-template-columns: 1fr;
+		grid-template-rows: repeat(3, auto);
+		max-width: 570px;
+		margin: 0 auto;
+
+		@include media-breakpoint-up(lg) {
+			margin: 0;
+		}
+		@include media-breakpoint-up(xl) {
+			max-width: 100%;
+			height: 100%;
+			grid-template-columns: repeat(2, 1fr);
+			grid-template-rows: repeat(2, auto);
+			background-image: url(#{$img-path}hero-bg_xl.svg);
+			background-position: right bottom;
+			background-repeat: no-repeat;
+		}
 	}
 	&__title {
+		margin-bottom: rem(20);
+		font-size: rem(20);
+		font-weight: 500;
+		line-height: rem(23);
+		text-align: center;
+
+		@include media-breakpoint-up(md) {
+			margin-bottom: rem(25);
+			font-size: rem(24);
+			line-height: rem(28);
+		}
+		@include media-breakpoint-up(lg) {
+			margin-bottom: rem(12);
+			font-size: rem(28);
+			line-height: rem(32);
+			text-align: left;
+		}
+		@include media-breakpoint-up(xl) {
+			margin-bottom: rem(26);
+			font-size: rem(38);
+			line-height: rem(44);
+			grid-column: 1/2;
+			grid-row: 1/2;
+		}
 	}
 	&__signup {
+		max-width: 266px;
+		width: 100%;
+		margin: 0 auto 30px;
 		background-color: $color-white;
 		color: $color-violet-dark;
 		border: 1px solid #4d67d5;
 
+		@include media-breakpoint-up(md) {
+			max-width: 250px;
+		}
+		@include media-breakpoint-up(lg) {
+			margin: 0 0 38px 28px;
+		}
+		@include media-breakpoint-up(xl) {
+			max-width: 330px;
+			margin-left: 0;
+			margin-bottom: 56px;
+			grid-column: 1/2;
+			grid-row: 2/3;
+		}
+
 		i {
 			background-color: $color-violet-lighter;
 			color: $color-violet;
+		}
+	}
+	&__features {
+		padding: 0;
+		margin: 0;
+		margin-bottom: 30px;
+
+		@include media-breakpoint-up(xl) {
+			grid-column: 2/3;
+			grid-row: 1/3;
+			margin-top: rem(16);
+		}
+		&-item {
+			display: flex;
+			line-height: 120%;
+			// align-items: baseline;
+
+			@include media-breakpoint-up(xl) {
+				font-size: rem(18);
+			}
+			&:not(:last-child) {
+				margin-bottom: rem(15);
+			}
+			&::before {
+				content: "";
+				display: block;
+				flex: 0 0 auto;
+				width: 12px;
+				height: 2px;
+				margin-right: 16px;
+				margin-top: 0.5em;
+				background-color: $color-blue;
+			}
 		}
 	}
 }

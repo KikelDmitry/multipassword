@@ -21,3 +21,11 @@ mixin svg(classes, anchor, title, desc, attrObj)
 //- icon fonts
 mixin icon(classes, title = false)
 	i(class=classes aria-hidden="true" title=title)
+
+//- mixin iconedBtn(type = 'link', classes, icon, text, attrObj)
+	if type == 'link'
+		a.home-hero__signup.iconed-btn(href="#")&attributes(atrrObj)
+			+icon('iconed-btn__icon')
+			span.iconed-btn__text #{text}
+	else if type == 'button'
+		button.iconed-btn(type="button")
