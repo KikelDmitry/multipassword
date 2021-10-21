@@ -1,1 +1,20 @@
-section.why-its-safe Why it's safe
+-
+	var list = [
+		'Modern security technologies (RSA, AES-256, HKDF, PBKDF2)',
+		'End-to-end encryption',
+		'Dual password protection',
+		'Only a MultiPassword user can access passwords',
+	]
+
+section.why-its-safe
+	.container-xl
+		.row
+			.col-12.col-lg-6.col-xl-5
+				.why-its-safe__banner
+					h2.why-its-safe__title.section-title.title-2 Why Is It Safe?
+					a.why-its-safe__more.more-btn(href="#") Learn more 
+			.col-12.col-lg-6.offset-xl-1
+				.why-its-safe__content
+					ul.why-its-safe__list
+						each item in list
+							li.why-its-safe__list-item #{item}
