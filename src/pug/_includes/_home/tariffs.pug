@@ -1,0 +1,109 @@
+-
+	var tariffs = [
+		{
+			name: 'Monthly',
+			price: 0,
+			fields: {
+				sync: {
+					title: 'Synchronization',
+					value: 'fas fa-check',
+					tooltip: 'Tooltip content'
+				},
+				vaults: {
+					title: 'Vaults available',
+					value: 1,
+					tooltip: 'Tooltip content'
+				},
+				multDevices: {
+					title: 'Multiple devices',
+					value: 'fas fa-check',
+					tooltip: 'Tooltip content'
+				},
+				passLimit: {
+					title: 'Passwod limit',
+					value: 20,
+					tooltip: 'Tooltip content'
+				},
+				crossPlat: {
+					title: 'Cross-platform',
+					value: 'fas fa-check',
+					tooltip: 'Tooltip content'
+				},
+				highSec: {
+					title: 'High security',
+					value: 'fas fa-check',
+					tooltip: 'Tooltip content'
+				},
+			},
+			button: {
+				text: 'Current plan',
+				isDisabled: true,
+			},
+		},
+		{
+			name: 'Luxury style',
+			price: 599,
+			fields: {
+				sync: {
+					title: 'Synchronization',
+					value: 'fas fa-check',
+					tooltip: 'Tooltip content'
+				},
+				vaults: {
+					title: 'Vaults available',
+					value: 'fas fa-infinity',
+					tooltip: 'Tooltip content'
+				},
+				multDevices: {
+					title: 'Multiple devices',
+					value: 'fas fa-check',
+					tooltip: 'Tooltip content'
+				},
+				passLimit: {
+					title: 'Passwod limit',
+					value: 'fas fa-infinity',
+					tooltip: 'Tooltip content'
+				},
+				crossPlat: {
+					title: 'Cross-platform',
+					value: 'fas fa-check',
+					tooltip: 'Tooltip content'
+				},
+				highSec: {
+					title: 'High security',
+					value: 'fas fa-check',
+					tooltip: 'Tooltip content'
+				},
+			},
+			button: {
+				text: 'Try for 30 days',
+				isDisabled: false,
+			},
+		},
+	]
+
+section.home-tariffs
+	.container-xl
+		h2.home-tariffs__title.section-title.title-2 Plan
+		.row
+			each tariff, idx in tariffs
+				.col-12.col-lg-6
+					.tariff-item(class=(idx === 1 ? 'tariff-item--gold' : ''))
+						header.tariff-item__header
+							.tariff-item__title #{tariff.name}
+							.tariff-item__price
+								span.tariff-item__currency Rub
+								span.tariff-item__num #{tariff.price}
+						table.tariff-item__table
+							each field in tariff.fields
+								tr.tariff-item__table-row
+									td.tariff-item__table-cell #{field.title}
+									td.tariff-item__table-value
+										if typeof field.value == 'number'
+											| #{field.value}
+										else
+											+icon(field.value)
+						footer.tariff-item__footer
+							a.action-btn(href="#" class=(tariff.button.isDisabled ? 'is-disabled' : '')) #{tariff.button.text}
+
+

@@ -1,0 +1,135 @@
+.home-tariffs {
+	border-top: 1px solid $color-gray-lighter;
+	padding: 20px 0;
+
+	@include media-breakpoint-up(md) {
+		padding: 30px 0;
+	}
+	@include media-breakpoint-up(lg) {
+		padding: 20px 0 30px;
+	}
+	@include media-breakpoint-up(xl) {
+		padding: 30px 0 58px;
+	}
+	&__title {
+		text-align: center;
+		margin-bottom: 25px;
+
+		@include media-breakpoint-up(xl) {
+			margin-bottom: 33px;
+		}
+	}
+}
+.tariff-item {
+	background-color: $color-gray-lightest;
+
+	&__header {
+		display: flex;
+		align-items: center;
+		height: 64px;
+		margin-bottom: 15px;
+		background-color: $color-gray-light;
+		color: $color-violet-dull-darker;
+		font-size: rem(18);
+
+		@include media-breakpoint-up(md) {
+			font-size: rem(24);
+		}
+		@include media-breakpoint-up(xl) {
+			font-size: rem(30);
+		}
+	}
+	&__title {
+		display: flex;
+		align-items: center;
+		height: 100%;
+		padding: 26px;
+		background-color: $color-gray-lighter;
+		font-family: $font-ubuntu;
+		font-weight: 500;
+		@include dottedEnd;
+
+		@include media-breakpoint-up(md) {
+			padding: 0 30px;
+		}
+	}
+	&__price {
+		margin-left: auto;
+		padding-right: 27px;
+
+		@include media-breakpoint-up(md) {
+			padding-right: 30px;
+		}
+		@include media-breakpoint-up(lg) {
+			padding-right: 20px;
+		}
+		@include media-breakpoint-up(xl) {
+			padding-right: 30px;
+		}
+	}
+	&__currency {
+		padding-right: .3em;
+		color: $color-gray-darker;
+		text-transform: uppercase;
+	}
+	&__num {
+		color: $color-gray-darkest;
+		font-weight: 500;	
+	}
+	&__table {
+		width: 100%;
+		border-spacing: 0;
+
+		&-row {
+			height: 40px;
+
+			&:not(:last-child) {
+				border-bottom: 1px solid $color-gray-lighter;
+			}
+		}
+		&-cell {
+
+			@include media-breakpoint-up(md) {
+				padding: 0 30px;
+			}
+			@include media-breakpoint-up(xl) {
+				font-size: rem(17);
+			}
+		}
+		&-value {
+			box-sizing: content-box;
+			width: 32px;
+			padding-right: 26px;
+			text-align: center;
+			color: $color-gray-darkest;
+			font-size: rem(17);
+			font-weight: 500;
+
+			@include media-breakpoint-up(md) {
+				padding-right: 30px;
+			}
+			i {
+				color: $color-green-dark;
+			}
+		}
+	}
+	&__footer {
+		padding: 15px 26px 20px;
+		
+		@include media-breakpoint-up(md) {
+			padding: 15px 30px 25px;
+		}
+	}
+	// luxury style 
+	&--gold {
+		background-color: $color-beige-lighter;
+
+		.tariff-item__header {
+			background-color: $color-beige;
+			color: $color-beige-darker;
+		}
+		.tariff-item__title {
+			background-color: $color-beige-light;
+		}
+	}
+}
