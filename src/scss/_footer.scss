@@ -59,7 +59,7 @@
 }
 .footer-menu {
 	&__title {
-		margin-bottom: 16px;
+		margin-bottom: 14px;
 		color: $color-violet-dull-darker;
 		font-size: rem(17);
 		font-weight: 500;
@@ -67,10 +67,7 @@
 	}
 	&__list {
 		padding-left: 0;
-
-		&:not(:last-child) {
-			margin-bottom: 16px;
-		}
+		margin-bottom: 16px;
 	}
 	&__item {
 		&:not(:last-child) {

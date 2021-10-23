@@ -1,0 +1,62 @@
+-
+	var features = [
+		{
+			icon: 'sync.svg',
+			title: 'Sync across devices',
+			text: 'MultiPassword works on different devices, from PCs to smartphones. Passwords automatically sync on all devices on which you\'re signed in.',
+			add: {
+				title: 'Available across platforms',
+				text: 'MultiPassword works on all modern smartphones, PCs, and web browsers.',
+			},
+		},
+		{
+			icon: 'import.svg',
+			title: 'Import web browser passwords',
+			text: 'MultiPassword allows you to import passwords from any web browser via a CSV file. No need to do manually add your passwords.',
+			add: {
+				title: 'Export from MultiPassword',
+				text: 'All passwords saved in MultiPassword can be exported via a CSV file. Quick and easy.',
+			},
+		},
+		{
+			icon: 'autofill.svg',
+			title: 'Autofill',
+			text: 'Logins, passwords, and other data from MultiPassword can autofill forms and fields on websites, social media, and other services.',
+			add: {
+				title: 'Quick search',
+				text: 'MultiPassword lets you quickly find any data: passwords, logins, comments, and more.',
+			},
+		},
+		{
+			icon: 'strong.svg',
+			title: 'Generate strong passwords',
+			text: 'Our built-in password generator, powered by modern technologies, will create a secure password for any website. You don\'t need to remember or write down complex combinations — just remember your master password.',
+		},
+		{
+			icon: 'trial.svg',
+			title: 'Free 30-day trial',
+			text: 'MultiPassword\'s trial version lets you use all the password manager features without limits.',
+		},
+		{
+			icon: 'storage.svg',
+			title: 'File storage',
+			text: 'Add up to 5 files of any format to each user account.',
+		},
+	];
+
+section.features-section
+	.container-xl
+		each feature in features
+			.features-section__item.row.align-items-xl-center
+				.col-3.col-md-2
+					.features-section__icon
+						img.features-section__img(src="img/features/" + feature.icon alt=feature.title + " feature icon")
+				.features-section__content.col-9.col-md-10
+					.row
+						div(class=(feature.add ? 'col-12 col-lg-6' : 'col-12'))
+							h2.features-section__title #{feature.title}
+							p.features-section__text #{feature.text}
+						if feature.add
+							.col-12.col-lg-6
+								h2.features-section__title #{feature.add.title}
+								p.features-section__text #{feature.add.text}

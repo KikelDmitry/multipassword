@@ -1,0 +1,6 @@
+section.page-title(class=(iconedTitle ? 'page-title--iconed' : ''))
+	.page-title__inner.container-xl
+		if iconedTitle
+			.page-title__icon
+				+icon(iconClass)
+		h1.page-title__h1.title-1 #{config.page.title}

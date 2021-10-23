@@ -1,0 +1,45 @@
+.page-title {
+	--size: 64px;
+
+	height: var(--size);
+	background-color: $color-gray-lightest;
+
+	@include media-breakpoint-up(lg) {
+		--size: 80px;
+	}
+	&__inner {
+		display: flex;
+	}
+	&__icon {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: var(--size);
+		height: var(--size);
+		margin-right: 15px;
+		background-color: $color-gray-lighter;
+		font-size: rem(22);
+
+		@include media-breakpoint-up(lg) {
+			font-size: rem(26);
+		}
+		@include media-breakpoint-up(xl) {
+			margin-right: 19px;
+		}
+	}
+	&__h1 {
+		height: var(--size);
+		display: flex;
+		align-items: center;
+		font-size: rem(24);
+		font-weight: 500;
+		color: $color-violet-dull-darker;
+
+		@include media-breakpoint-up(lg) {
+			font-size: rem(28);
+		}
+		@include media-breakpoint-up(xl) {
+			font-size: rem(32);
+		}
+	}
+}
