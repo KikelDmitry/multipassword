@@ -1,0 +1,26 @@
+.signup-section {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 160px;
+	background-color: $color-gray-lightest;
+	color: $color-white;
+
+	@include media-breakpoint-up(xl) {
+		height: 170px;
+	}
+	&__btn {
+		max-width: 290px;
+		width: 100%;
+		margin: 0 10px;
+		background-color: $color-blue-dark;
+		color: $color-white;
+
+		i {
+			background-color: $color-blue;
+		}
+		&:hover {
+			color: inherit;
+		}
+	}
+}
