@@ -9,7 +9,7 @@
 		text-align: center;
 
 		@include media-breakpoint-up(md) {
-			margin-bottom: 0;
+			margin-bottom: 18px;
 			text-align: left;
 		}
 	}
@@ -32,7 +32,8 @@
 	align-items: center;
 	height: 85px;
 	padding: 26px 22px;
-	margin-top: 40px;
+	margin-top: 22px;
+	margin-bottom: 20px;
 	background-color: $color-gray-lightest;
 
 	@include media-breakpoint-up(xl) {

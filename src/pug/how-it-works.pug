@@ -1,0 +1,10 @@
+extends _layout/page.pug
+
+block meta
+	- config.page.title = 'How it works?';
+	- iconedTitle = true;
+	- iconClass = 'fas fa-info-circle';
+
+block main
+	include _includes/_hiw/hiw-section.pug
+	include _includes/signup-section.pug
