@@ -1,0 +1,110 @@
+-
+	var list = [
+		{
+			title: 'Web browser extensions',
+			descr: 'The web browser extension allows passwords and other info to be autofilled.',
+			coloredIcons: true,
+			buttons: [
+				{
+					title: 'Chrome',
+					icon: '',
+				},
+				{
+					title: 'Brave',
+					icon: '',
+				},
+				{
+					title: 'Opera',
+					icon: '',
+				},
+				{
+					title: 'Edge',
+					icon: '',
+				},
+				{
+					title: 'Yandex',
+					icon: '',
+				},
+				{
+					title: 'Firefox',
+					icon: '',
+				},
+				{
+					title: 'Safari',
+					icon: '',
+				},
+			],
+		},
+		{
+			title: 'Web App',
+			descr: 'All of MultiPassword\'s features are available in any web browser.',
+			buttons: [
+				{
+					title: 'Sign in',
+					icon: 'fas fa-sign-in-alt',
+				},
+				{
+					title: 'Register',
+					icon: 'fa fa-user-plus',
+				},
+			],
+		},
+		{
+			title: 'Desktops',
+			descr: 'Get the most out of MultiPassword password manager on your PC or laptop.',
+			buttons: [
+				{
+					title: 'Windows',
+					icon: 'fab fa-windows',
+					dropdown: true,
+					list: [
+						'Windows x32',
+						'Windows x64',
+					]
+				},
+				{
+					title: 'OSx',
+					icon: 'fab fa-apple',
+				},
+				{
+					title: 'Linux',
+					icon: 'fab fa-linux',
+				},
+			],
+		},
+		{
+			title: 'Mobile apps',
+			descr: 'Enjoy quick, easy access to your passwords and other data from mobile devices.',
+			buttons: [
+				{
+					title: 'App Store',
+					icon: 'fab fa-app-store',
+				},
+				{
+					title: 'Google Play',
+					icon: 'fab fa-google-play',
+				},
+			],
+		},
+	];
+
+section.download-section
+	.container-xl
+		each category in list
+			.row.align-items-xl-center
+				.col-12.col-xl-6
+					h2.download-section__title #{category.title}
+					p.download-section__description #{category.descr}
+				.col-12.col-sm-8.col-lg-7.col-xl-6
+					.row
+						each button in category.buttons
+							.col-12.col-sm-6
+								if button.dropdown
+
+								else
+									a.download-section__btn.iconed-btn(href="#" class=(button.disabled ? 'is-disabled' : ''))
+										if category.coloredIcons
+											span.iconed-btn__icon Icon
+										else
+											+icon(button.icon + ' iconed-btn__icon')
+										span.iconed-btn__text #{button.title}
