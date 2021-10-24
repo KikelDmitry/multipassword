@@ -4,6 +4,9 @@
 	@include media-breakpoint-up(xl) {
 		padding-bottom: 30px;
 	}
+	&__list {
+		counter-reset: hiw;
+	}
 	.hiw-item {
 		margin-left: 10px;
 

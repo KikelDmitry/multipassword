@@ -24,12 +24,13 @@
 
 section.hiw-section
 	.container-xl
-		each item in list
-			.row.align-items-lg-center
-				.col-12.col-lg-5
-					.hiw-item
-						.hiw-item__icon
-							img.hiw-item__icon-img(src="img/hiw/" + item.icon alt="How it's work icon")
-						.hiw-item__text !{item.text.replace('MultiPassword', '<strong>MultiPassword</strong>')}
-				.col-12.col-lg-7
-					.hiw-description #{item.description}
+		ol.hiw-section__list
+			each item in list
+				li.hiw-section__list-item.row.align-items-lg-center
+					.col-12.col-lg-5
+						.hiw-item
+							.hiw-item__icon
+								img.hiw-item__icon-img(src="img/hiw/" + item.icon alt="How it's work icon")
+							.hiw-item__text !{item.text.replace('MultiPassword', '<strong>MultiPassword</strong>')}
+					.col-12.col-lg-7
+						.hiw-description #{item.description}

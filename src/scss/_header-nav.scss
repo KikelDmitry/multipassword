@@ -13,6 +13,7 @@
 			top: 100%;
 			left: 0;
 			right: 0;
+			z-index: z(tooltip);
 			overflow: hidden;
 			pointer-events: none;
 			opacity: 0;
