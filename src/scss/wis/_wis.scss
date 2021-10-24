@@ -1,0 +1,103 @@
+$colors: (
+	("violet", $color-violet, "wis01.svg"),
+	("blue", $color-blue, "wis02.svg"),
+	("violet-dark", $color-violet-dark, "wis03.svg"),
+	("beige", $color-beige, "wis04.svg")
+);
+
+.thesis-item {
+	@include media-breakpoint-up(lg) {
+		background-position: right top;
+		background-size: 50% 100%;
+		background-repeat: no-repeat;
+	}
+	&__banner {
+		position: relative;
+		min-height: 150px;
+		margin: 0 calc(var(--bs-gutter-x) * -0.5);
+
+		@include media-breakpoint-up(lg) {
+			min-height: 270px;
+			margin: 0;
+
+			&::after {
+				--position: calc((var(--bs-gutter-x) * 0.5 + 100% + -1px) * -1);
+				content: "";
+				width: 19px;
+				height: 40px;
+				position: absolute;
+				top: 50%;
+				left: 0;
+				transform: translate(var(--position), -50%);
+				background-color: inherit;
+				clip-path: polygon(19px 0, 0 20px, 19px 40px);
+			}
+		}
+	}
+	&__content {
+		padding: rem(20) 0;
+
+		@include media-breakpoint-up(lg) {
+			padding-right: var(--bs-gutter-x);
+		}
+	}
+	&__title {
+		margin-bottom: rem(20);
+		font-weight: 400;
+		font-size: rem(20);
+		line-height: rem(23);
+		color: $color-violet-dull-darkest;
+
+		@include media-breakpoint-up(lg) {
+			font-size: rem(22);
+			line-height: rem(25);
+		}
+		@include media-breakpoint-up(xl) {
+			margin-bottom: rem(25);
+		}
+	}
+	&__text {
+		margin: 0;
+		color: $color-gray-darker;
+		line-height: rem(22);
+
+		@include media-breakpoint-up(lg) {
+			font-size: rem(17);
+			line-height: rem(24);
+		}
+	}
+	&--reverse {
+		background-position: left top;
+
+		.thesis-item__content {
+			@include media-breakpoint-up(lg) {
+				padding-left: var(--bs-gutter-x);
+			}
+		}
+		.thesis-item__banner {
+			@include media-breakpoint-up(lg) {
+				&::after {
+					--position: calc(var(--bs-gutter-x) * 0.5 + 100% - 1px);
+					left: auto;
+					right: 0;
+					transform: translate(var(--position), -50%);
+					clip-path: polygon(0 0, 19px 20px, 0 40px);
+				}
+			}
+		}
+	}
+	@each $class, $color, $bg in $colors {
+		&--#{$class} {
+			@include media-breakpoint-up(lg) {
+				background-image: linear-gradient(to right, $color, $color);
+			}
+			.thesis-item__banner {
+				background-color: $color;
+				background-image: url(#{$img-path}wis/#{$bg});
+				background-repeat: no-repeat;
+				background-position: center center;
+				background-size: auto 110%;
+			}
+		}
+	}
+}

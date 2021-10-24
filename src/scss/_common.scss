@@ -15,6 +15,8 @@ body {
 }
 .main {
 	flex: 1 1 auto;
+	display: flex;
+	flex-direction: column;
 }
 
 // titles
@@ -27,7 +29,7 @@ body {
 	font-weight: 500;
 	font-size: rem(20);
 	line-height: rem(23);
-	
+
 	@include media-breakpoint-up(md) {
 		font-size: rem(24);
 		line-height: rem(28);
@@ -101,7 +103,7 @@ body {
 	}
 	&__text {
 		flex: 1 1 auto;
-		margin-left: calc(var(--size) * -1);
+		margin-left: calc(var(--size) * -0.5);
 		text-align: center;
 		font-family: $font-ubuntu;
 		font-weight: normal;

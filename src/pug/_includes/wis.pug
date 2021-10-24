@@ -1,0 +1,35 @@
+-
+	var theses = [
+		{
+			color: 'violet',
+			title: 'End-to-end password encryption underlies MultiPassword\'s reliability',
+			text: 'Passwords are encrypted and decrypted on the user\'s device, not MultiPassword servers. Neither third-party services nor MultiPassword developers have access to user passwords.',
+		},
+		{
+			color: 'blue',
+			title: 'Modern data protection and encryption technologies',
+			text: 'We use RSA, AES-256, HKDF, PBKDF2 to store and protect passwords; these are modern end-to-end password encryption technologies. They allow secure encryption of passwords and other confidential user data.',
+		},
+		{
+			color: 'violet-dark',
+			title: 'Only the MultiPassword user can access passwords',
+			text: 'Encrypted passwords and other data are only available to the MultiPassword user. Only the master password owner has access.',
+		},
+		{
+			color: 'beige',
+			title: 'Dual password protection',
+			text: 'To use MultiPassword, you need to know the master password and private key. You need the master password to sign in and receive passwords on websites and the private key to authenticate new devices.',
+		},
+	];
+		
+section.theses-section
+	each thesis, idx in theses
+		.thesis-item(class="thesis-item--" + thesis.color class=(idx % 2 == 0 ? 'thesis-item--reverse' : ''))
+			.container-xl
+				.row(class=(idx % 2 == 0 ? 'flex-row-reverse' : ''))
+					.col-12.col-lg-6
+						.thesis-item__content
+							h2.thesis-item__title.title-2 #{thesis.title}
+							p.thesis-item__text #{thesis.text}
+					.col-12.col-lg-6
+						.thesis-item__banner
