@@ -7,31 +7,38 @@
 			buttons: [
 				{
 					title: 'Chrome',
-					icon: '',
+					icon: 'chrome.svg',
+					colorSet: 'gray',
 				},
 				{
 					title: 'Brave',
-					icon: '',
+					icon: 'brave.svg',
+					colorSet: 'gray',
 				},
 				{
 					title: 'Opera',
-					icon: '',
+					icon: 'opera.svg',
+					colorSet: 'gray',
 				},
 				{
 					title: 'Edge',
-					icon: '',
+					icon: 'edge.svg',
+					colorSet: 'gray',
 				},
 				{
 					title: 'Yandex',
-					icon: '',
+					icon: 'yandex.svg',
+					colorSet: 'gray',
 				},
 				{
 					title: 'Firefox',
-					icon: '',
+					icon: 'firefox.svg',
+					colorSet: 'gray',
 				},
 				{
 					title: 'Safari',
-					icon: '',
+					icon: 'safari.svg',
+					colorSet: 'gray',
 				},
 			],
 		},
@@ -42,10 +49,12 @@
 				{
 					title: 'Sign in',
 					icon: 'fas fa-sign-in-alt',
+					colorSet: 'green',
 				},
 				{
 					title: 'Register',
 					icon: 'fa fa-user-plus',
+					colorSet: 'gray',
 				},
 			],
 		},
@@ -56,19 +65,22 @@
 				{
 					title: 'Windows',
 					icon: 'fab fa-windows',
+					colorSet: 'blue',
 					dropdown: true,
 					list: [
 						'Windows x32',
 						'Windows x64',
-					]
+					],
 				},
 				{
 					title: 'OSx',
 					icon: 'fab fa-apple',
+					colorSet: 'blue',
 				},
 				{
 					title: 'Linux',
 					icon: 'fab fa-linux',
+					colorSet: 'blue',
 				},
 			],
 		},
@@ -79,10 +91,12 @@
 				{
 					title: 'App Store',
 					icon: 'fab fa-app-store',
+					colorSet: 'blue',
 				},
 				{
 					title: 'Google Play',
 					icon: 'fab fa-google-play',
+					colorSet: 'blue',
 				},
 			],
 		},
@@ -91,20 +105,30 @@
 section.download-section
 	.container-xl
 		each category in list
-			.row.align-items-xl-center
+			.download-section__item.row.align-items-xl-center
 				.col-12.col-xl-6
-					h2.download-section__title #{category.title}
+					h2.download-section__title.section-title.title-2 #{category.title}
 					p.download-section__description #{category.descr}
-				.col-12.col-sm-8.col-lg-7.col-xl-6
+				.col-12.col-sm-9.col-lg-7.col-xl-6
 					.row
 						each button in category.buttons
 							.col-12.col-sm-6
 								if button.dropdown
-
+									a.download-section__btn.iconed-btn(href="#" class=(button.disabled ? 'is-disabled' : '') class=(button.colorSet ? 'download-section__btn--' + button.colorSet : ''))
+										+icon(button.icon + ' iconed-btn__icon')
+										span.iconed-btn__text #{button.title}
+									.dropdown
+										button(type="button" data-bs-toggle="dropdown" aria-expanded="false")
+											+icon('iconed-btn__caret fa fa-caret-down')
+										ul.dropdown-menu
+											each item in button.list
+												li #{item}
+									//- button.download-section__btn.iconed-btn(type="button" data-bs-toggle="dropdown" aria-expanded="false" class=(button.colorSet ? 'download-section__btn--' + button.colorSet : ''))
 								else
-									a.download-section__btn.iconed-btn(href="#" class=(button.disabled ? 'is-disabled' : ''))
+									a.download-section__btn.iconed-btn(href="#" class=(button.disabled ? 'is-disabled' : '') class=(button.colorSet ? 'download-section__btn--' + button.colorSet : ''))
 										if category.coloredIcons
-											span.iconed-btn__icon Icon
+											span.iconed-btn__icon.iconed-btn__icon--img
+												img(src="img/icons/browsers/" + button.icon alt=button.title + " logo" width="30" height="30")
 										else
 											+icon(button.icon + ' iconed-btn__icon')
 										span.iconed-btn__text #{button.title}

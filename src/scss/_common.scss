@@ -123,11 +123,22 @@ body {
 			font-size: rem(24);
 		}
 	}
+	&__caret {
+		flex: 0 0 auto;
+		width: 32px;
+		height: 84.44%;
+		margin-left: auto;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		border-left: 1px solid $color-violet-light;
+	}
+	// if button
+	&[type="button"],
+	&[type="submit"] {
+		width: 100%;
+	}
 	&:hover {
-		.iconed-btn__icon {
-			font-size: 140%;
-			text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.4);
-		}
 	}
 }
 .more-btn {

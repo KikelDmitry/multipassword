@@ -1,9 +1,115 @@
 .download-section {
-	&__btn {
-		i {
-			background-color: gray;
+	&__item {
+		position: relative;
+		padding: rem(40) 0;
+
+		&:not(:last-child) {
+			&::after {
+				content: "";
+				display: block;
+				position: absolute;
+				bottom: 0;
+				left: 0;
+				width: 100%;
+				height: 1px;
+				background-color: #e2ebee;
+				
+				@include media-breakpoint-up(lg) {
+					left: calc(var(--bs-gutter-x) * 0.5);
+					width: calc(100% - var(--bs-gutter-x));
+					margin: 0 auto;
+				}
+			}
 		}
-		background-color: blue;
-		color: white;
+	}
+	&__title {
+		margin-bottom: rem(19);
+		color: $color-violet-dark;
+
+		@include media-breakpoint-up(lg) {
+			margin-bottom: rem(12);
+		}
+		@include media-breakpoint-up(xl) {
+			margin-bottom: rem(13);
+		}
+	}
+	&__description {
+		margin-bottom: rem(17);
+		color: $color-gray-darkest;
+
+		@include media-breakpoint-up(lg) {
+			font-size: rem(17);
+		}
+		@include media-breakpoint-up(xl) {
+			margin-bottom: 0;
+		}
+	}
+	&__btn {
+		// default
+		--size: 60px;
+		margin: 7px 0;
+		background-color: #000;
+		color: #fff;
+		transition: background-color 200ms;
+
+		.iconed-btn__icon {
+			font-size: rem(24);
+
+			&--img {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+
+				img {
+					max-width: 30px;
+					max-height: 30px;
+				}
+			}
+		}
+		.iconed-btn__text {
+			margin-left: 0;
+			padding: 0 0.7em;
+			text-align: left;
+			font-size: rem(20);
+		}
+		&:hover {
+			color: $color-white;
+		}
+
+		// button color options
+		&--gray {
+			background-color: #f1f8fa;
+
+			.iconed-btn__icon {
+				background-color: #e2ebee;
+				color: $color-violet;
+			}
+			.iconed-btn__text {
+				color: #2844aa;
+			}
+			&:hover {
+				background-color: #cddde2;
+			}
+		}
+		&--green {
+			background-color: #1d9fb7;
+
+			.iconed-btn__icon {
+				background-color: #13869c;
+			}
+			&:hover {
+				background-color: #00869d;
+			}
+		}
+		&--blue {
+			background-color: #3b5adc;
+
+			.iconed-btn__icon {
+				background-color: #2640ad;
+			}
+			&:hover {
+				background-color: #2e4ac1;
+			}
+		}
 	}
 }

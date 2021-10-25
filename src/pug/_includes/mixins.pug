@@ -1,7 +1,7 @@
 //- svg sprite insert
-mixin svg(classes, anchor, title, desc, attrObj)
+mixin coloredSprite(classes, id, title, desc, attrObj)
 	svg(class=classes)&attributes(attrObj) 
-		use(href="/img/sprite.svg#" + anchor)
+		use(href="img/colored-sprite.svg#" + id)
 		if title
 			title=title
 		if desc

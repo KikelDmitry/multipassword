@@ -22,12 +22,13 @@ const tilde = require('node-sass-tilde-importer');
 //js
 const minify = require('gulp-minify');
 
+//svg
+const gulpSvgSprite = require('gulp-svg-sprite');
+const svgmin = require('gulp-svgmin');
+
 //bitmap
 const imagemin = require('gulp-imagemin');
 const imageminPngquant = require('imagemin-pngquant');
-
-//iconfont
-const iconfont = require('gulp-iconfont');
 
 //CONFIG
 
@@ -46,9 +47,9 @@ const globs = {
 	],
 	images: [
 		config.src + 'img/**/*.{png,jpg,jpeg,svg,gif}',
-		'!' + config.src + 'img/icons/**/*.svg'
+		// '!' + config.src + 'img/icons/**/*.svg'
 	],
-	icons: [
+	sprite: [
 		config.src + 'img/icons/**/*.svg',
 	],
 	fonts: config.src + 'fonts/**/*.*',
@@ -130,20 +131,20 @@ const images = () => {
 };
 exports.images = images;
 
-const icons = () => {
-	return src(globs.icons)
-		.pipe(iconfont({
-			fontName: 'iconfont',
-			prependUnicode: true,
-			formats: ['woff'],
-		}))
-		.on('glyphs', function (glyphs, options) {
-			// CSS templating, e.g.
-			console.log(glyphs, options);
-		})
-		.pipe(dest(config.dest + 'fonts'));
-}
-exports.icons = icons;
+const svgsprite = () => {
+	return src(globs.sprite)
+		.pipe(svgmin())
+		.pipe(gulpSvgSprite({
+			mode: {
+				stack: {
+					sprite: '../colored-sprite.svg'  //sprite file name
+				}
+			},
+		}
+		))
+		.pipe(dest(config.dest + 'img'));
+};
+exports.svgsprite = svgsprite;
 
 const fonts = () => {
 	return src(globs.fonts)
@@ -154,7 +155,7 @@ const watcher = () => {
 	watch(config.src + 'pug/**/*.pug', pug)
 	watch(config.src + 'scss/**/*.scss', scss)
 	watch(globs.js, scripts)
-	// watch(globs.icons, icons)
+	// watch(globs.sprite, svgsprite)
 	watch(globs.images, images)
 };
 
@@ -175,13 +176,11 @@ exports.clean = clean;
 exports.build = series(
 	clean,
 	parallel(
-		series(
-			scss,
-			pug,
-		),
+		pug,
+		scss,
 		scripts,
+		// svgsprite,
 		images,
-		// icons,
 		fonts
 	)
 );
