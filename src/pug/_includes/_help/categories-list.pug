@@ -1,0 +1,38 @@
+-
+	var categories = [
+		{
+			title: 'FAQ',
+			icon: 'fas fa-info-circle',
+		},
+		{
+			title: 'Google Chrome',
+			icon: 'fab fa-chrome',
+		},
+		{
+			title: 'Windows',
+			icon: 'fab fa-windows',
+		},
+		{
+			title: 'Mozilla Firefox',
+			icon: 'fab fa-firefox',
+		},
+		{
+			title: 'Opera',
+			icon: 'fab fa-opera',
+		},
+		{
+			title: 'Яндекс.Браузер',
+			icon: 'fab fa-yandex-international',
+		},
+	];
+
+section.help-categories
+	.container-xl
+		.row
+			each cat in categories
+				.col-12.col-sm-6.col-md-4
+					.help-categories__item
+						.help-categories__banner
+							.help-categories__icon
+								+icon(cat.icon)
+						a.help-categories__title(href="#") #{cat.title}

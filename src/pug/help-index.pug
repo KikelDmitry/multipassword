@@ -1,0 +1,12 @@
+extends _layout/page.pug
+
+block meta
+	- config.page.title = 'Help';
+	- iconedTitle = false;
+	- searchBar = true;
+	- latestArticlesTitlte = true;
+
+block main
+	include _includes/_help/categories-list.pug
+	include _includes/_help/latest-articles.pug
+	include _includes/_help/try-section.pug

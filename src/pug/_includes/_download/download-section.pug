@@ -114,16 +114,16 @@ section.download-section
 						each button in category.buttons
 							.col-12.col-sm-6
 								if button.dropdown
-									a.download-section__btn.iconed-btn(href="#" class=(button.disabled ? 'is-disabled' : '') class=(button.colorSet ? 'download-section__btn--' + button.colorSet : ''))
-										+icon(button.icon + ' iconed-btn__icon')
-										span.iconed-btn__text #{button.title}
-									.dropdown
-										button(type="button" data-bs-toggle="dropdown" aria-expanded="false")
-											+icon('iconed-btn__caret fa fa-caret-down')
-										ul.dropdown-menu
-											each item in button.list
-												li #{item}
-									//- button.download-section__btn.iconed-btn(type="button" data-bs-toggle="dropdown" aria-expanded="false" class=(button.colorSet ? 'download-section__btn--' + button.colorSet : ''))
+									.download-section__dropdown.dropdown
+										a.download-section__btn.iconed-btn(href="#" class=(button.disabled ? 'is-disabled' : '') class=(button.colorSet ? 'download-section__btn--' + button.colorSet : ''))
+											+icon(button.icon + ' iconed-btn__icon')
+											span.iconed-btn__text #{button.title}
+										.download-section__dropdown-btn
+											button(type="button" data-bs-toggle="dropdown" aria-expanded="false")
+												+icon('iconed-btn__caret fa fa-caret-down')
+											ul.dropdown-menu
+												each item in button.list
+													li #{item}
 								else
 									a.download-section__btn.iconed-btn(href="#" class=(button.disabled ? 'is-disabled' : '') class=(button.colorSet ? 'download-section__btn--' + button.colorSet : ''))
 										if category.coloredIcons

@@ -34,6 +34,7 @@
 	padding: 26px 22px;
 	margin-top: 22px;
 	margin-bottom: 20px;
+	margin-left: 10px;
 	background-color: $color-gray-lightest;
 
 	@include media-breakpoint-up(xl) {
@@ -45,7 +46,7 @@
 		counter-increment: hiw;
 		position: absolute;
 		top: -22px;
-		left: 0;
+		left: -10px;
 		display: flex;
 		justify-content: center;
 		align-items: center;

@@ -1,6 +1,9 @@
-section.page-title(class=(iconedTitle ? 'page-title--iconed' : ''))
+section.page-title(class=(iconedTitle ? 'page-title--iconed' : '') class=(searchBar ? 'page-title--search' : ''))
 	.page-title__inner.container-xl
 		if iconedTitle
 			.page-title__icon
 				+icon(iconClass)
 		h1.page-title__h1.title-1 #{config.page.title}
+		if searchBar
+			.page-title__search-bar
+				include search-bar.pug

@@ -7,13 +7,6 @@
 	&__list {
 		counter-reset: hiw;
 	}
-	.hiw-item {
-		margin-left: 10px;
-
-		&::before {
-			left: -10px;
-		}
-	}
 }
 .hiw-description {
 	padding-left: 80px;

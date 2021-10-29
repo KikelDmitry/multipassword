@@ -1,0 +1,30 @@
+-
+	var list = [
+		{
+			title: 'Password should contain letters in different cases. How do I come up with one?',
+			descr: 'Simple, helpful tips to creating strong passwords that hack-resistant.',
+		},
+		{
+			title: 'What are password managers and why are they needed?',
+			descr: 'Why is it recommended to use password managers?',
+		},
+		{
+			title: 'MultiPassword subscription limitations',
+			descr: 'What limitations will the MultiPassword account have after the subscription expires?',
+		},
+		{
+			title: 'How to delete my MultiPassword account?',
+			descr: 'Instructions for deleting the MultiPassword account.',
+		},
+	]
+
+section.latest-articles
+	.container-xl
+		if latestArticlesTitlte
+			h2.latest-articles__title.title-2 Latest articles
+		ul.latest-articles__list
+			each item in list
+				li.latest-articles__item.article-item
+					h3.article-item__title.title-3
+						a.article-item__link(href="#") #{item.title}
+					p.article-item__descr #{item.descr}

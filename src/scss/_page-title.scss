@@ -1,7 +1,7 @@
 .page-title {
 	--size: 64px;
 
-	height: var(--size);
+	min-height: var(--size);
 	background-color: $color-gray-lightest;
 
 	@include media-breakpoint-up(lg) {
@@ -9,6 +9,7 @@
 	}
 	&__inner {
 		display: flex;
+		align-items: center;
 	}
 	&__icon {
 		display: flex;
@@ -40,6 +41,30 @@
 		}
 		@include media-breakpoint-up(xl) {
 			font-size: rem(32);
+		}
+	}
+	&__search-bar {
+		margin-bottom: 15px;
+		width: 100%;
+
+		@include media-breakpoint-up(md) {
+			width: auto;
+			margin-bottom: 0;
+			margin-left: auto;
+		}
+	}
+	&--iconed {
+
+	}
+	&--search {
+		.page-title__inner {
+			flex-direction: column;
+			align-items: flex-start;
+
+			@include media-breakpoint-up(md) {
+				align-items: center;
+				flex-direction: row;
+			}
 		}
 	}
 }
