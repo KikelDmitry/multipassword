@@ -1,0 +1,15 @@
+-
+	var list = [
+		'Password should contain letters in different cases. How do I come up with one?',
+		'What are password managers and why are they needed?',
+		'MultiPassword subscription limitations',
+		'How to delete my MultiPassword account?',
+	];
+
+section.related-articles
+	.container-xl
+		h2.related-articles__title.title-2 Related articles
+		ul.related-articles__list
+			each item in list
+				li.related-articles__item
+					a.related-articles__link(href="#") #{item}

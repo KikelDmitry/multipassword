@@ -1,0 +1,10 @@
+extends _layout/page.pug
+
+block meta
+	- config.page.title = 'Help';
+	- iconedTitle = false;
+	- searchBar = true;
+
+block main
+	include _includes/_article/article-body.pug
+	include _includes/_article/related-articles.pug

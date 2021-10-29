@@ -1,0 +1,39 @@
+.related-articles {
+	padding: 25px 0;
+	border-top: 1px solid $color-gray-lighter;
+
+	&__title {
+		margin-bottom: rem(25);
+		color: $color-violet-dull-darker;
+		font-size: rem(25);
+	}
+	&__list {
+	}
+	&__item {
+		position: relative;
+		display: flex;
+		align-items: center;
+		justify-content: flex-start;
+
+		&:not(:last-child) {
+			border-bottom: 1px solid #e2ebee;
+		}
+	}
+	&__link {
+		padding: 10px 0 13px;
+		color: $color-violet-dark;
+		font-family: $font-ubuntu;
+		font-size: rem(18);
+		font-weight: 500;
+		
+		&::before {
+			content: "\f15c";
+			font-family: "Font Awesome 5 Free";
+			margin-right: 13px;
+			color: $color-beige-dark;
+		}
+		&:hover {
+			color: $color-violet-light;
+		}
+	}
+}
