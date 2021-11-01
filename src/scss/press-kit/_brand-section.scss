@@ -1,0 +1,23 @@
+.press-brand {
+	padding: 40px 0 20px;
+	border-bottom: 1px solid $color-gray-lighter;
+
+	&__title {
+		margin-bottom: 28px;
+		color: $color-violet;
+		font-size: rem(25);
+		font-weight: 500;
+	}
+	&__text {
+		font-size: rem(17);
+
+		a {
+			color: $color-blue-dark;
+			text-decoration: underline;
+
+			&:hover {
+				text-decoration: none;
+			}
+		}
+	}
+}

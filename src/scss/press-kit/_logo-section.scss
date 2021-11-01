@@ -1,0 +1,114 @@
+.press-logo {
+	padding-top: 25px;
+	border-bottom: 1px solid $color-gray-lighter;
+
+	&__title {
+		color: $color-violet-dull-darkest;
+		font-size: rem(20);
+		font-weight: 500;
+		margin-bottom: 1em;
+
+		@include media-breakpoint-up(md) {
+			margin-bottom: 0;
+		}
+	}
+	&__download {
+		display: inline-flex;
+		height: 40px;
+		font-size: rem(16);
+		font-weight: 500;
+
+		span {
+			font-weight: normal;
+			padding-left: 0.3em;
+		}
+	}
+	&__item {
+		position: relative;
+		margin-bottom: 40px;
+
+		&-title {
+			margin-bottom: rem(20);
+			&.align-right {
+				text-align: right;
+			}
+		}
+		&-image {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			height: 210px;
+			padding: 34px 15px;
+
+			@include media-breakpoint-up(lg) {
+				height: 260px;
+				justify-content: flex-start;
+			}
+			@include media-breakpoint-up(xxl) {
+				height: 306px;
+			}
+
+			img {
+				max-height: 100%;
+			}
+		}
+		&-dl {
+			position: absolute;
+			bottom: 0;
+			right: 0;
+			min-width: 155px;
+			height: 40px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			padding: 0 1em;
+			background-color: $color-white;
+			color: $color-violet-darker;
+			font-weight: 500;
+
+			span {
+				padding-left: 0.3em;
+				font-weight: normal;
+			}
+			&:hover {
+				background-color: $color-violet-dull-dark;
+				color: $color-white;
+			}
+		}
+		&--mini {
+			.press-logo__item-image {
+				justify-content: center;
+				background-color: $color-violet-dull-darkest;
+			}
+		}
+		&--full {
+			.press-logo__item-image {
+				background-color: #eaecf5;
+
+				@include media-breakpoint-up(lg) {
+					padding-left: 52px;
+				}
+			}
+		}
+		&--mono {
+			.press-logo__item-image {
+				height: 160px;
+
+				@include media-breakpoint-up(lg) {
+					align-items: flex-start;
+					padding: 0;
+					padding-left: 74px;
+				}
+			}
+			.press-logo__item-dl {
+				background-color: #eaecf5;
+				color: $color-violet-darker;
+
+				&:hover {
+					background-color: $color-violet-dull-dark;
+					color: $color-white;
+				}
+			}
+		}
+	}
+}

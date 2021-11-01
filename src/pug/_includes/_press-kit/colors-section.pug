@@ -1,0 +1,25 @@
+-
+	var colors = [
+		{
+			title: 'Dark blue',
+			hex: '#2640AD',
+		},
+		{
+			title: 'Indigo',
+			hex: '#4661D2',
+		},
+		{
+			title: 'Lavender',
+			hex: '#8D9FEC',
+		},
+	];
+- function colorClass(name) { return name.replace(' ', '-').toLowerCase() }
+
+section.press-colors
+	.container-xl
+		h2.press-colors__title Colors
+		.press-colors__row
+			each color in colors
+				.press-colors__item(class="press-colors__item--" + colorClass(color.title))
+					.press-colors__item-title #{color.title}
+					.press-colors__item-hex #{color.hex}

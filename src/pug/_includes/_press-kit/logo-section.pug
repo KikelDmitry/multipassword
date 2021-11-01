@@ -1,0 +1,48 @@
+-
+	var logos = {
+		mini: {
+			file: 'mp-logo.svg',
+			alt: 'MultiPassword logo',
+		},
+		full: {
+			file: 'mp-logo_full.svg',
+			alt: 'MultiPassword full logo',
+		},
+		mono: {
+			file: 'mp-logo_mono.svg',
+			alt: 'MultiPassword monochromatic logo',
+		},
+	}
+
+section.press-logo
+	.container-xl
+		.row.justify-content-between.align-items-center.mb-4
+			.col-12.col-md-6.col-lg-8.col-xl-9
+				h2.press-logo__title Logo
+			.col-12.col-md-6.col-lg-4.col-xl-3
+				a.press-logo__download.action-btn(href="#" download) Download full logo pack
+					span (10.3Mb)
+		.row
+			.col-12.col-lg-3
+				.press-logo__item.press-logo__item--mini
+					.press-logo__item-title Multipassword logo.
+					.press-logo__item-image
+						img(src="img/content/press-kit/" + logos.mini.file alt=logos.mini.title)
+					a.press-logo__item-dl(href="#" download) Download 
+						span (5.2Mb)
+			.col-12.col-lg-9
+				.press-logo__item.press-logo__item--full
+					.press-logo__item-title Multipassword wordmark logo.
+					.press-logo__item-image
+						img(src="img/content/press-kit/" + logos.full.file alt=logos.full.title)
+					a.press-logo__item-dl(href="#" download) Download 
+						span (5.2Mb)
+		.row
+			.col-12.col-lg-3
+				.press-logo__item-title.align-right Multipassword wordmark logo monochromatic.
+			.col-12.col-lg-9
+				.press-logo__item.press-logo__item--mono
+					.press-logo__item-image
+						img(src="img/content/press-kit/" + logos.mono.file alt=logos.mono.title)
+					a.press-logo__item-dl(href="#" download) Download 
+						span (5.2Mb)

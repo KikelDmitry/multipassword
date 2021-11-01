@@ -1,0 +1,11 @@
+extends _layout/page.pug
+
+block meta
+	- config.page.title = 'Press kit';
+	- iconedTitle = false;
+
+block main
+	include _includes/_press-kit/brand-section.pug
+	include _includes/_press-kit/logo-section.pug
+	include _includes/_press-kit/colors-section.pug
+	include _includes/_press-kit/resources-section.pug
