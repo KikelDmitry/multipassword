@@ -1,0 +1,32 @@
+.main {
+	&--publisher {
+		display: flex;
+		background-image: url(#{$img-path}sign-in-back.svg), linear-gradient(to right, $color-violet, $color-violet),
+			linear-gradient(to right, $color-gray-lightest, $color-gray-lightest);
+		background-repeat: no-repeat;
+		background-size: auto 24%, 100% 50%, 100% 50%;
+		background-position: right top, 0 0, 0 0;
+	}
+}
+.signin-block {
+	margin: auto;
+	padding: 15px 15px 50px;
+	box-sizing: content-box;
+
+	&__title {
+		max-width: 360px;
+		margin-bottom: 0.75em;
+		color: $color-white;
+		font-size: rem(30);
+		line-height: 115%;
+
+		@include media-breakpoint-up(lg) {
+			font-size: rem(40);
+		}
+	}
+	&__form {
+		width: 100%;
+		max-width: 360px;
+		min-height: 460px;
+	}
+}

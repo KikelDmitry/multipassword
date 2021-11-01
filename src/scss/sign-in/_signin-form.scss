@@ -1,0 +1,44 @@
+.signin-form {
+	box-shadow: 0px 14px 50px rgba(35, 45, 48, 0.33);
+	background-color: $color-white;
+
+	&__header {
+		display: flex;
+		align-items: center;
+		padding: 30px 30px 15px;
+		color: $color-violet;
+		border-bottom: 1px solid $color-gray-lighter;
+
+		&-icon {
+			font-size: rem(24);
+			margin-right: rem(14);
+		}
+		&-title {
+			font-size: rem(25);
+		}
+	}
+	&__body {
+		padding: 15px 30px 30px;
+	}
+	&__label {
+		display: flex;
+		flex-direction: column;
+
+		&-text {
+			padding: rem(12) 0;
+			font-size: rem(16);
+			color: $color-gray-darker-l;
+		}
+	}
+	&__input {
+		height: rem(40);
+		padding: 0 rem(20);
+		background-color: $color-gray-lighter;
+		border: 0;
+		color: $color-gray-darkest;
+
+		&::placeholder {
+			color: $color-gray-dark;
+		}
+	}
+}

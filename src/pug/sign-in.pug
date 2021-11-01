@@ -1,0 +1,11 @@
+extends _layout/login.pug
+
+block meta
+	- miniFooter = true;
+	- mainClasses = 'main--publisher';
+
+block main
+	.signin-block
+		h1.signin-block__title.title-1 MultiPassword publisher account
+		.signin-block__form
+			include _includes/_sign-in/signin-form.pug

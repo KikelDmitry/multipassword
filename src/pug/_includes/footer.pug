@@ -94,16 +94,17 @@
 	];
 
 footer.footer
-	.footer__top
-		.container-xl
-			.row
-				each col in menu
-					nav.footer-menu.col-12.col-md-6.col-lg-3
-						h4.footer-menu__title #{col.title}
-						ul.footer-menu__list
-							each item in col.items
-								li.footer-menu__item
-									a.footer-menu__link(href=item.url) #{item.title} 
+	if !miniFooter
+		.footer__top
+			.container-xl
+				.row
+					each col in menu
+						nav.footer-menu.col-12.col-md-6.col-lg-3
+							h4.footer-menu__title #{col.title}
+							ul.footer-menu__list
+								each item in col.items
+									li.footer-menu__item
+										a.footer-menu__link(href=item.url) #{item.title} 
 	.footer__bottom
 		.container-xl
 			.row
