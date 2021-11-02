@@ -1,0 +1,31 @@
+.signin-add {
+	display: flex;
+	background-color: $color-violet-dark;
+	color: $color-white;
+	font-size: rem(16);
+
+	&__list {
+		width: 100%;
+		margin: auto 0;
+		padding: 20px 0;
+	}
+	&__item {
+		min-height: 50px;
+		padding: 0 40px;
+		display: flex;
+		align-items: center;
+
+		&:nth-child(odd) {
+			background-color: #2946bf;
+		}
+		&::before {
+			content: '';
+			display: block;
+			flex: 0 0 auto;
+			width: 8px;
+			height: 2px;
+			margin-right: 10px;
+			background-color: #31B5CB;
+		}
+	}
+}

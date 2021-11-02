@@ -1,3 +1,4 @@
+// desktop first approach
 .main {
 	&--publisher {
 		display: flex;
@@ -12,6 +13,13 @@
 	margin: auto;
 	padding: 15px 15px 122px;
 	box-sizing: content-box;
+	max-width: 360px;
+	width: 100%;
+
+	@include media-breakpoint-down(lg) {
+		box-sizing: border-box;
+		max-width: 390px;
+	}
 
 	&__title {
 		max-width: 360px;
@@ -24,9 +32,24 @@
 			font-size: rem(40);
 		}
 	}
-	&__form {
-		width: 100%;
-		max-width: 360px;
+	&__inner {
+		display: flex;
+		width: inherit;
+		max-width: inherit;
 		min-height: 460px;
+		box-shadow: 0px 14px 50px rgba(35, 45, 48, 0.33);
+
+		@include media-breakpoint-down(md) {
+			display: block;
+		}
+	}
+	&--wide {
+		max-width: 750px;
+
+		.signin-block__inner {
+			> * {
+				flex: 1 0 50%;
+			}
+		}
 	}
 }
