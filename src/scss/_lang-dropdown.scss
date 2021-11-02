@@ -59,6 +59,7 @@
 	&__link {
 		text-decoration: none;
 		color: $color-violet-dark;
+		line-height: 1.2;
 		@include dottedEnd;
 
 		&::after {

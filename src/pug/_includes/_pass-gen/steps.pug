@@ -1,0 +1,18 @@
+-
+	var steps = [
+		'Enter the length of the future password.',
+		'Check or uncheck the boxes next to "Numbers" and "Special Symbols".',
+		'Make sure the generated password is highly secure and copy it.',
+	];
+
+.steps-section
+	.container-xl
+		.row
+			.col-12
+				p.steps-section__description The MultiPassword password generator is an easy way to create a strong and secure password.
+					br
+					| This happens in a matter of seconds:
+		.row
+			ol.steps-section__list.row
+				each step in steps
+					li.steps-section__item.col-12.col-md-4 #{step}

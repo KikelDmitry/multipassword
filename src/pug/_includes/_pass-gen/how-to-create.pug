@@ -1,0 +1,17 @@
+-
+	var list = [
+		'Do not use any personal information in passwords - date of birth, names of children and loved ones, address ofresidence, etc.',
+		'Do not use short passwords - the longer the passwords, the more secure. It is recommended that you do not use passwords less than 10 characters long.',
+		'Do not use existing words and phrases in passwords.',
+		'Use different passwords on different sites. It is important that passwords are not repeated. Otherwise, hacking / compromising one password will help attackers in hacking different accounts.',
+		'When creating passwords, use letters of different case, numbers and special characters - this significantly increases the password strength.',
+	]
+.how-to-create
+	.container-lg
+		.row
+			.how-to-create__info.col-12.col-md-5
+				h2.how-to-create__title How do I create a strong password?
+				p.how-to-create__subtitle The more complex the password, the more difficult it is to crack. To protect your personal data, when creating a  password, you need to follow simple tips:
+			ul.how-to-create__list.blue-list.col-12.col-md-7
+				each item in list
+					li.how-to-create__item #{item}

@@ -1,0 +1,53 @@
+.pass-section
+	.container-lg
+		.row
+			.col-12.col-xl-8
+				.pass-gen
+					.pass-gen__body.pass-gen__body--mob
+						.pass-gen__body.pass-gen__body--desc
+							.pass-gen__output
+								.input-group
+									input(type="text" readonly)
+									.input-group-append
+										button(type="button")
+											+icon('fas fa-copy')
+							.pass-control
+								.pass-control__pass-icon
+									include ../../../img/icons/safety.svg
+								.pass-control__length
+									.option-title Длина
+									.input-group
+										.input-group-prepend
+											button(type="button" name="decr")
+												+icon('fas fa-minus')
+										input(type="number" name="length" readonly value=8 min=1 max=64)
+										.input-group-append
+											button(type="button" name="incr")
+												+icon('fas fa-plus')
+								.pass-control__safety
+									.option-title Надежность
+									.progress
+										.progress-bar(role="progressbar")
+								.pass-control__options
+									label.pass-control__label
+										input.pass-control__input(type="checkbox" name="nums")
+										span.pass-control__title.option-title Цифры
+										span.pass-control__check
+											+icon('fas fa-check')
+									label.pass-control__label
+										input.pass-control__input(type="checkbox" name="symbls")
+										span.pass-control__title.option-title Спец. символы
+										span.pass-control__check
+											+icon('fas fa-check')
+								button.pass-control__generate(type="button") Генерировать
+			.col-12.col-xl-4
+				.pass-info
+					h2.pass-info__title Store passwords in MultiPassword
+					ul.pass-info__list
+						li.pass-info__item Safe storage and use of passwords
+						li.pass-info__item Modern data protection from russian hackers
+						li.pass-info__item Easy access to accounts - under your control
+					a.iconed-btn.pass-info__download(href="#" download)
+						+icon('iconed-btn__icon fa fa-download')
+						span.iconed-btn__text Donwload
+			.d-block.d-md-none.col-12
