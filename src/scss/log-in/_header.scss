@@ -1,0 +1,55 @@
+.log-header {
+	margin-top: 16vh;
+	background-image: linear-gradient(to right, $color-gray-lighter, $color-gray-lighter);
+	background-repeat: no-repeat;
+	background-size: 50% 100%;
+	
+	
+	&__inner {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		height: 64px;
+		
+		@include media-breakpoint-up(sm) {
+			height: 75px;
+		}
+		@include media-breakpoint-up(md) {
+			height: 100px;
+		}
+		@include media-breakpoint-up(lg) {
+			height: 142px;
+		}
+	}
+	&__title,
+	&__subtitle {
+		flex: 1 1 100%;
+	}
+	&__title {
+		color: $color-violet-dark;
+		font-size: rem(20);
+		font-weight: 400;
+
+		@include media-breakpoint-up(md) {
+			font-size: rem(24);
+		}
+		@include media-breakpoint-up(lg) {
+			font-size: rem(32);
+		}
+		span {
+			color: $color-violet-dull-darker;
+		}
+	}
+	&__logo {
+		flex: 0 0 auto;
+		height: 100%;
+
+		&-img {
+			height: 100%;
+			width: auto;
+		}
+	}
+	&__subtitle {
+
+	}
+}
