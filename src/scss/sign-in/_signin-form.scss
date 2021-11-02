@@ -18,11 +18,12 @@
 		}
 	}
 	&__body {
-		padding: 15px 30px 30px;
+		padding: 15px 30px 20px;
 	}
 	&__label {
 		display: flex;
 		flex-direction: column;
+		align-items: flex-start;
 
 		&-text {
 			padding: rem(12) 0;
@@ -31,14 +32,68 @@
 		}
 	}
 	&__input {
+		width: 100%;
+		min-width: 0;
 		height: rem(40);
 		padding: 0 rem(20);
 		background-color: $color-gray-lighter;
-		border: 0;
+		border: 2px solid transparent;
 		color: $color-gray-darkest;
+		font-weight: 500;
 
 		&::placeholder {
 			color: $color-gray-dark;
+		}
+		&:focus {
+			outline: 0;
+			border-color: $color-violet;
+		}
+	}
+	&__checkbox {
+		width: 22px;
+		height: 22px;
+		margin-right: 10px;
+		cursor: pointer;
+	}
+	&__row {
+		display: flex;
+		align-items: center;
+		padding: 30px 0;
+
+		label {
+			display: flex;
+			align-items: center;
+		}
+		span,
+		a {
+			margin-right: 0.25em;
+		}
+		a {
+			color: $color-blue-dark;
+			text-decoration: underline;
+
+			&:hover {
+				text-decoration: none;
+			}
+		}
+	}
+	&__footer {
+		display: flex;
+		justify-content: flex-end;
+		align-items: center;
+		color: $color-blue-dark;
+		padding: 0 30px 30px;
+
+		a {
+			text-decoration: underline;
+
+			span {
+				padding-left: 0.3em;
+			}
+			&:hover {
+				color: $color-violet;
+				text-decoration: none;
+			}
 		}
 	}
 }

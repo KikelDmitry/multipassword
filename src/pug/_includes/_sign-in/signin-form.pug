@@ -9,3 +9,13 @@ form.signin-form
 		label.signin-form__label
 			span.signin-form__label-text Password
 			input.signin-form__input(type="password" placeholder="Password" name="pass")
+		.signin-form__row
+			label
+				input.signin-form__checkbox(type="checkbox" name="remember" checked)
+				span Remember me.
+			a(href="#") Forgot password? 
+		button.signin-form__submit.action-btn Sign in
+	footer.signin-form__footer
+		a.signin-form__footer-link(href="#")
+			+icon('fa fa-user-plus')
+			span Sign up 
