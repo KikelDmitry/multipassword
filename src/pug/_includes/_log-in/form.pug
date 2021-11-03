@@ -1,0 +1,16 @@
+form.log-form
+	if logType == 'login'
+		label.log-form__row
+			+icon('log-form__icon fa fa-lock')
+			input.log-form__input(type="password" placeholder="Master password" required)
+		.log-form__row.log-form__row--text
+			a.log-form__link(href="#") Forgot your password? 
+		button.log-form__submit.iconed-btn(type="submit")
+			+icon('iconed-btn__icon log-form__submit-icon fa fa-sign-in-alt')
+			span.iconed-btn__text.log-form__submit-text Sign in
+	else if logType == 'register'
+
+	.log-form__messages
+		.log-form__row.log-form-msg.log-form-msg--err
+			+icon('log-form__icon log-form-msg__icon fas fa-times')
+			span.log-form-msg__text Can’t sign in. Master password is incorrect.

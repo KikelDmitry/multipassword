@@ -1,5 +1,6 @@
 .account-options {
 	display: flex;
+	margin-bottom: 30px;
 
 	&__inner {
 		height: 40px;
@@ -21,9 +22,9 @@
 	margin-left: 12px;
 
 	&__btn {
-		min-width: 160px;
 		display: flex;
 		align-items: center;
+		color: $color-violet;
 
 		&-caret {
 			flex: 0 0 auto;
@@ -32,8 +33,10 @@
 			display: flex;
 			justify-content: center;
 			align-items: center;
-			color: $color-violet;
 			border-left: 1px solid $color-gray-light;
+		}
+		&.show {
+			color: $color-violet-dark;
 		}
 	}
 	&__icon {
@@ -45,12 +48,10 @@
 		justify-content: center;
 		align-items: center;
 		background-color: $color-gray-lighter;
-		color: $color-violet;
 		border-radius: 50%;
 		font-size: rem(14);
 	}
 	&__name {
-		color: $color-violet-dark;
 		font-size: rem(16);
 		font-weight: 500;
 		padding-right: 1em;

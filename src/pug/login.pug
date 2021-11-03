@@ -1,9 +1,12 @@
 extends _layout/login.pug
 
 block meta
+	- config.page.title = 'Log in';
 	- miniFooter = true;
 	- mainClasses = 'main--login';
+	- logType = 'login';
 
 block main
 	include _includes/_log-in/header.pug
 	include _includes/_log-in/account.pug
+	include _includes/_log-in/form.pug
