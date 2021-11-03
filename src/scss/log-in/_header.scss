@@ -112,7 +112,6 @@
 			align-items: center;
 			width: 32px;
 			height: 32px;
-			padding-left: 0.3em;
 			margin-right: 7px;
 			font-size: rem(13);
 			color: $color-violet;
@@ -146,6 +145,15 @@
 					transform-origin: left center;
 					transform: scaleX(1);
 				}
+			}
+		}
+		&--login {
+			i {
+			}
+		}
+		&--reg {
+			i {
+				padding-left: 0.3em;
 			}
 		}
 	}

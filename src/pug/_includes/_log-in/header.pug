@@ -6,7 +6,13 @@ header.log-header
 			.log-header__logo
 				img.log-header__logo-img(src="img/logo.svg" alt="MultiPassword logo")
 			.log-header__info
-				h2.log-header__subtitle Login account
-				a.log-header__link(href="#")
-					+icon('fa fa-user-plus')
-					span Create an account
+				if logType == 'login'
+					h2.log-header__subtitle Login account
+					a.log-header__link.log-header__link--reg(href="register.html")
+						+icon('fa fa-user-plus')
+						span Create an account
+				else if logType == 'register'
+					h2.log-header__subtitle Create account
+					a.log-header__link.log-header__link--login(href="login.html")
+						+icon('fa fa-sign-in-alt')
+						span Sign in 
