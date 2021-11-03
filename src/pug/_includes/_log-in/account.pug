@@ -1,0 +1,18 @@
+section.account-options
+	.account-options__inner
+		.account-options__title Account
+		.account-options__dropdown.user-dropdown
+			button.user-dropdown__btn.dropdown(type="button" data-bs-toggle="dropdown" aria-expanded="false")
+				+icon('user-dropdown__icon fa fa-user')
+				span.user-dropdown__name John Doe
+				span.user-dropdown__btn-caret
+					+icon('fa fa-caret-down')
+			ul.user-dropdown__list.dropdown-menu
+				li.user-dropdown__item
+					a(href="#") 
+						+icon('fa fa-plus')
+						span Add
+				li.user-dropdown__item
+					a(href="#") 
+						+icon('fa fa-pencil-alt')
+						span Edit

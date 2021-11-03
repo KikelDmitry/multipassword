@@ -1,0 +1,92 @@
+.account-options {
+	display: flex;
+
+	&__inner {
+		height: 40px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		margin: 0 auto;
+		background-color: $color-gray-lightest;
+	}
+	&__title {
+		padding-left: 1em;
+		color: $color-gray-darker;
+		font-size: rem(16);
+		font-weight: 500;
+	}
+}
+.user-dropdown {
+	position: relative;
+	margin-left: 12px;
+
+	&__btn {
+		min-width: 160px;
+		display: flex;
+		align-items: center;
+
+		&-caret {
+			flex: 0 0 auto;
+			width: 32px;
+			height: 20px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			color: $color-violet;
+			border-left: 1px solid $color-gray-light;
+		}
+	}
+	&__icon {
+		flex: 0 0 auto;
+		width: 32px;
+		height: 32px;
+		margin-right: 12px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		background-color: $color-gray-lighter;
+		color: $color-violet;
+		border-radius: 50%;
+		font-size: rem(14);
+	}
+	&__name {
+		color: $color-violet-dark;
+		font-size: rem(16);
+		font-weight: 500;
+		padding-right: 1em;
+		max-width: 200px;
+		@include dottedEnd;
+	}
+	&__list {
+		padding: 0;
+		border: 0;
+		box-shadow: 0 2px 4px -1px rgb(0 0 0 / 40%);
+		top: 3px !important;
+	}
+	&__item {
+		// &:not(:last-child) {
+		// 	border-bottom: 1px solid #cddde2;
+		// }
+		a {
+			height: 28px;
+			display: flex;
+			align-items: center;
+
+			&:hover {
+				background-color: $grad-light;
+				color: $color-violet;
+			}
+		}
+		i {
+			display: flex;
+			justify-content: center;
+			width: 32px;
+			margin-right: 12px;
+			color: $color-violet;
+		}
+		span {
+			white-space: nowrap;
+			padding-right: 1em;
+		}
+	}
+}
