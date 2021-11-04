@@ -1,2 +1,23 @@
-section.reg-steps
-	
+-
+	var steps = [
+		{
+			icon: 'fa fa-user',
+			title: 'Register email',
+		},
+		{
+			icon: 'fa fa-lock',
+			title: 'Set master password',
+		},
+		{
+			icon: 'fa fa-key',
+			title: 'Get security key',
+		},
+	];
+
+section.reg-steps.step-3
+	ol.reg-steps__inner
+		each step in steps
+			li.reg-steps__item.one-step
+				.one-step__icon
+					+icon(step.icon)
+				.one-step__title #{step.title}

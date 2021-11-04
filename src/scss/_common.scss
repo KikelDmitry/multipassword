@@ -107,8 +107,9 @@ body {
 	}
 	&__text {
 		flex: 1 1 auto;
+		padding-left: var(--size);
 		margin-left: calc(var(--size) * -0.5);
-		text-align: center;
+		text-align: left;
 		font-family: $font-ubuntu;
 		font-weight: normal;
 		font-weight: 500;

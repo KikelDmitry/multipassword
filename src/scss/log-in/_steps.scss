@@ -1,3 +1,122 @@
 .reg-steps {
+	--icon-size: 50px;
 	
+	margin: auto 0 60px;
+	position: relative;
+	
+	@include media-breakpoint-up(sm) {
+		--icon-size: 75px;
+	}
+	&__inner {
+		max-width: 100%;
+		margin: 0 auto;
+		display: flex;
+		justify-content: center;
+		align-items: flex-start;
+		counter-reset: steps;
+
+		@include media-breakpoint-up(lg) {
+			max-width: 50%;
+		}
+	}
+	&__item {
+		flex: 1 1 33.33%;
+
+		// &:not(:first-child):not(:last-child) {
+		// 	flex-basis: 0;
+		// 	max-width: 100%;
+		// }
+	}
+	&::before,
+	&::after {
+		content: "";
+		position: absolute;
+		z-index: z(under);
+		top: calc(var(--icon-size) / 2);
+		left: 0;
+		right: 0;
+		height: 8px;
+		transform: translateY(-50%);
+	}
+	&::before {
+		background-color: $color-gray-lighter;
+	}
+	&::after {
+		background-color: $color-blue;
+	}
+}
+.one-step {
+	text-align: center;
+
+	&__icon {
+		width: var(--icon-size);
+		height: var(--icon-size);
+		margin: 0 auto rem(23);
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		background-color: $color-blue;
+		color: $color-white;
+		border-radius: 50%;
+		font-size: calc(var(--icon-size) / 3);
+	}
+	&__title {
+		display: none;
+		font-size: rem(18);
+		color: $color-violet-dull-darker;
+		
+		@include media-breakpoint-up(sm) {
+			display: block;
+		}
+	}
+	&::after {
+		content: counter(steps);
+		counter-increment: steps;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: calc(var(--icon-size) / 1.6);
+		height: calc(var(--icon-size) / 1.6);
+		margin: 0 auto;
+		border-radius: 50%;
+		border: 1px solid $color-gray;
+
+		@include media-breakpoint-up(sm) {
+			display: none;
+		}
+	}
+}
+// active steps
+.reg-steps {
+	--step-length: 16.667%;
+
+	&.step-1 {
+		&::after {
+			width: var(--step-length);
+			
+			@include media-breakpoint-up(lg) {
+				width: 33.33%;
+			}
+		}
+	}
+	&.step-2 {
+		&::after {
+			width: calc(var(--step-length) * 3);
+
+			@include media-breakpoint-up(lg) {
+				width: 50%;
+				
+			}
+		}
+	}
+	&.step-3 {
+		&::after {
+			width: calc(var(--step-length) * 5);
+
+			@include media-breakpoint-up(lg) {
+				width: 66.66%;
+		
+			}
+		}
+	}
 }

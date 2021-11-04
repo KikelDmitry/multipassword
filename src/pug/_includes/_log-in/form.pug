@@ -5,10 +5,23 @@ form.log-form
 			input.log-form__input(type="password" placeholder="Master password" required)
 		.log-form__row.log-form__row--text
 			a.log-form__link(href="#") Forgot your password? 
-		button.log-form__submit.iconed-btn(type="submit")
-			+icon('iconed-btn__icon log-form__submit-icon fa fa-sign-in-alt')
-			span.iconed-btn__text.log-form__submit-text Sign in
+		button.log-form__btn.iconed-btn(type="submit")
+			+icon('iconed-btn__icon log-form__btn-icon fa fa-sign-in-alt')
+			span.iconed-btn__text.log-form__btn-text Sign in
 	else if logType == 'register'
+		label.log-form__row
+			+icon('log-form__icon fa fa-user')
+			input.log-form__input(type="text" placeholder="Enter name" required)
+		label.log-form__row
+			+icon('log-form__icon fa fa-envelope')
+			input.log-form__input(type="email" placeholder="Enter email address" required)
+		.log-form__row.log-form__row--btn
+			button.log-form__btn.log-form__btn--nav.iconed-btn(type="submit")
+				+icon('iconed-btn__icon log-form__btn-icon fa fa-arrow-alt-circle-left')
+				span.iconed-btn__text.log-form__btn-text Back
+			button.log-form__btn.log-form__btn--nav.iconed-btn(type="submit")
+				+icon('iconed-btn__icon log-form__btn-icon fa fa-arrow-alt-circle-right')
+				span.iconed-btn__text.log-form__btn-text Next
 		
 	.log-form__messages
 		.log-form__row.log-form-msg.log-form-msg--err
