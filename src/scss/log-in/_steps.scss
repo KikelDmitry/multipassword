@@ -1,9 +1,9 @@
 .reg-steps {
 	--icon-size: 50px;
-	
+
 	margin: auto 0 60px;
 	position: relative;
-	
+
 	@include media-breakpoint-up(sm) {
 		--icon-size: 75px;
 	}
@@ -21,11 +21,6 @@
 	}
 	&__item {
 		flex: 1 1 33.33%;
-
-		// &:not(:first-child):not(:last-child) {
-		// 	flex-basis: 0;
-		// 	max-width: 100%;
-		// }
 	}
 	&::before,
 	&::after {
@@ -64,7 +59,7 @@
 		display: none;
 		font-size: rem(18);
 		color: $color-violet-dull-darker;
-		
+
 		@include media-breakpoint-up(sm) {
 			display: block;
 		}
@@ -88,14 +83,41 @@
 }
 // active steps
 .reg-steps {
-	--step-length: 16.667%;
+	--step-length: 16.66%;
 
+	@keyframes pulse {
+		0% {
+			box-shadow: 0 0 10px transparentize($color-blue, 0.1);
+		}
+		50% {
+			box-shadow: 0 0 10px 5px transparentize($color-blue, 0.5);
+		}
+		100% {
+			box-shadow: 0 0 10px transparentize($color-blue, 0.1);
+		}
+	}
+
+	&::after {
+		transition: width 1000ms;
+	}
 	&.step-1 {
 		&::after {
 			width: var(--step-length);
-			
+
 			@include media-breakpoint-up(lg) {
 				width: 33.33%;
+			}
+		}
+		.reg-steps__item {
+			&:nth-child(1) {
+				.one-step__icon {
+					animation: pulse 1000ms infinite ease-in-out;
+					// animation-fill-mode: both;
+				}
+				.one-step__title {
+					font-weight: bold;
+					color: $color-blue-darker;
+				}
 			}
 		}
 	}
@@ -105,7 +127,19 @@
 
 			@include media-breakpoint-up(lg) {
 				width: 50%;
-				
+			}
+		}
+		.reg-steps__item {
+			&:nth-child(1),
+			&:nth-child(2) {
+				.one-step__icon {
+					animation: pulse 1000ms infinite ease-in-out;
+					// animation-fill-mode: both;
+				}
+				.one-step__title {
+					font-weight: bold;
+					color: $color-blue-darker;
+				}
 			}
 		}
 	}
@@ -115,8 +149,26 @@
 
 			@include media-breakpoint-up(lg) {
 				width: 66.66%;
-		
 			}
+		}
+		.reg-steps__item {
+			&:nth-child(1),
+			&:nth-child(2),
+			&:nth-child(3) {
+				.one-step__icon {
+					animation: pulse 1000ms infinite ease-in-out;
+					// animation-fill-mode: both;
+				}
+				.one-step__title {
+					font-weight: bold;
+					color: $color-blue-darker;
+				}
+			}
+		}
+	}
+	&.full {
+		&::after {
+			width: 100%;
 		}
 	}
 }

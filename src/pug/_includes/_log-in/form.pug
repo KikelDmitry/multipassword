@@ -1,5 +1,6 @@
 form.log-form
 	if logType == 'login'
+		//- Login block /////
 		label.log-form__row
 			+icon('log-form__icon fa fa-lock')
 			input.log-form__input(type="password" placeholder="Master password" required)
@@ -9,6 +10,8 @@ form.log-form
 			+icon('iconed-btn__icon log-form__btn-icon fa fa-sign-in-alt')
 			span.iconed-btn__text.log-form__btn-text Sign in
 	else if logType == 'register'
+
+		//- Register block /////
 		label.log-form__row
 			+icon('log-form__icon fa fa-user')
 			input.log-form__input(type="text" placeholder="Enter name" required)
@@ -16,10 +19,10 @@ form.log-form
 			+icon('log-form__icon fa fa-envelope')
 			input.log-form__input(type="email" placeholder="Enter email address" required)
 		.log-form__row.log-form__row--btn
-			button.log-form__btn.log-form__btn--nav.iconed-btn(type="submit")
+			button.log-form__btn.log-form__btn--nav.iconed-btn(type="button")
 				+icon('iconed-btn__icon log-form__btn-icon fa fa-arrow-alt-circle-left')
 				span.iconed-btn__text.log-form__btn-text Back
-			button.log-form__btn.log-form__btn--nav.iconed-btn(type="submit")
+			button.log-form__btn.log-form__btn--nav.iconed-btn(type="button")
 				+icon('iconed-btn__icon log-form__btn-icon fa fa-arrow-alt-circle-right')
 				span.iconed-btn__text.log-form__btn-text Next
 		

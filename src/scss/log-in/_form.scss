@@ -6,10 +6,12 @@
 
 	&__row {
 		--size: 40px;
+		position: relative;
 		display: flex;
 		align-items: center;
 		width: 100%;
-		height: var(--size);
+		min-height: var(--size);
+		margin: 15px 0;
 
 		&:focus-within {
 			.log-form__icon {
@@ -26,8 +28,12 @@
 			padding-left: var(--size);
 			height: auto;
 			display: flex;
-			flex-wrap: wrap;
+			// flex-wrap: wrap;
 			justify-content: space-between;
+
+			@include media-breakpoint-down(sm) {
+				padding-left: 0;
+			}
 		}
 	}
 	&__icon {
@@ -40,6 +46,13 @@
 		padding-bottom: 0.4em;
 		color: $color-gray-light;
 		transition: color 200ms;
+
+		@include media-breakpoint-down(sm) {
+			position: absolute;
+			top: 0;
+			right: 0;
+			pointer-events: none;
+		}
 	}
 	&__input {
 		min-width: 0;
@@ -79,6 +92,7 @@
 		transition: border-color 200ms;
 
 		&-icon {
+			height: var(--size);
 			background-color: $color-gray-lighter;
 			transition: background-color 200ms, color 200ms;
 			font-size: inherit;
@@ -98,7 +112,7 @@
 			}
 		}
 		&--nav {
-			margin: 0 10px;
+			margin: 0 8px;
 			max-width: 190px;
 
 			&:first-of-type {
@@ -106,6 +120,11 @@
 			}
 			&:last-of-type {
 				margin-right: 0;
+			}
+			@include media-breakpoint-down(sm) {
+				// max-width: 50%;
+				margin: rem(10) rem(10);
+				--size: 50px;
 			}
 		}
 	}
@@ -117,16 +136,34 @@
 	margin: 15px 0;
 
 	&__icon {
-		color: $color-red;
 		padding-bottom: 0;
+
+		@include media-breakpoint-down(sm) {
+			height: 100%;
+		}
 	}
 	&__text {
 		flex: 1 1 auto;
 		display: flex;
 		align-items: center;
 		height: 100%;
-		padding: 0 30px;
+		padding: rem(17) rem(30);
 		background-color: $color-red;
 		color: $color-white;
+		line-height: 1.2;
+		
+		@include media-breakpoint-down(sm) {
+			padding: rem(14) rem(15);
+			padding-right: var(--size);
+		}
+	}
+	&--err {
+		.log-form-msg__icon {
+			color: $color-red;
+
+			@include media-breakpoint-down(sm) {
+				color: $color-white;
+			}
+		}
 	}
 }

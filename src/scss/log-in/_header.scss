@@ -1,15 +1,15 @@
 .log-header {
 	--line-height: 64px;
-	margin-top: 16vh;
 	margin-bottom: rem(40);
 	background-image: linear-gradient(to right, $color-gray-lighter, $color-gray-lighter);
 	background-repeat: no-repeat;
 	background-size: calc(100% - var(--line-height) / 2) var(--line-height);
-
+	
 	@include media-breakpoint-up(sm) {
 		--line-height: 75px;
 	}
 	@include media-breakpoint-up(md) {
+		margin-top: 16vh;
 		--line-height: 100px;
 		background-size: 50% var(--line-height);
 	}
