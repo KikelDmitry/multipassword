@@ -34,11 +34,13 @@
 					title: 'Firefox',
 					icon: 'firefox',
 					colorSet: 'gray',
+					isInactive: true,
 				},
 				{
 					title: 'Safari',
 					icon: 'safari',
 					colorSet: 'gray',
+					isInactive: true,
 				},
 			],
 		},
@@ -52,7 +54,7 @@
 					colorSet: 'green',
 				},
 				{
-					title: 'Register',
+					title: 'Sign up',
 					icon: 'fa fa-user-plus',
 					colorSet: 'gray',
 				},
@@ -89,14 +91,15 @@
 			descr: 'Enjoy quick, easy access to your passwords and other data from mobile devices.',
 			buttons: [
 				{
-					title: 'App Store',
-					icon: 'fab fa-app-store',
-					colorSet: 'blue',
-				},
-				{
 					title: 'Google Play',
 					icon: 'fab fa-google-play',
 					colorSet: 'blue',
+				},
+				{
+					title: 'App Store',
+					icon: 'fab fa-app-store',
+					colorSet: 'blue',
+					isInactive: true,
 				},
 			],
 		},
@@ -109,7 +112,7 @@ section.download-section
 				.col-12.col-xl-6
 					h2.download-section__title.section-title.title-2 #{category.title}
 					p.download-section__description #{category.descr}
-				.col-12.col-sm-9.col-lg-7.col-xl-6
+				.col-12.col-sm-10.col-md-9.col-lg-7.col-xl-6
 					.row
 						each button in category.buttons
 							.col-12.col-sm-6
@@ -126,7 +129,7 @@ section.download-section
 													li.dropdown-menu__item
 														a.dropdown-menu__link(href="#" download) #{item} 
 								else
-									a.download-section__btn.iconed-btn(href="#" class=(button.disabled ? 'is-disabled' : '') class=(button.colorSet ? 'download-section__btn--' + button.colorSet : ''))
+									a.download-section__btn.iconed-btn(href=(button.isInactive ? false : '#') class=(button.colorSet ? 'download-section__btn--' + button.colorSet : '') class=(button.isInactive ? 'is-inactive' : ''))
 										if category.coloredIcons
 											span.iconed-btn__icon.iconed-btn__icon--img
 												//- +coloredSprite(

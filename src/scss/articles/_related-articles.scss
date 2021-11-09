@@ -25,10 +25,11 @@
 		font-family: $font-ubuntu;
 		font-size: rem(18);
 		font-weight: 500;
+		line-height: 1.5;
 		
 		&::before {
 			content: "\f15c";
-			font-family: "Font Awesome 5 Free";
+			font-family: $font-fa;
 			margin-right: 13px;
 			color: $color-beige-dark;
 		}
