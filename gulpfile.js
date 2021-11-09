@@ -43,6 +43,8 @@ const globs = {
 	],
 	scss: config.src + 'scss/main.scss',
 	js: [
+		'./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js',
+		'./node_modules/@popperjs/core/dist/umd/popper.min.js',
 		config.src + 'js/**/main.js',
 	],
 	images: [

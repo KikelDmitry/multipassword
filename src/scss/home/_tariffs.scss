@@ -21,6 +21,7 @@
 	}
 }
 .tariff-item {
+	margin: 15px 0;
 	background-color: $color-gray-lightest;
 
 	&__header {
@@ -94,6 +95,18 @@
 			}
 			@include media-breakpoint-up(xl) {
 				font-size: rem(17);
+			}
+		}
+		&-tooltip {
+			cursor: help;
+			padding: 0 .6em;
+
+			&--green {
+				color: $color-green-dark;
+			}
+			&--blue {
+				color: $color-violet;
+
 			}
 		}
 		&-value {

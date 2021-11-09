@@ -7,32 +7,30 @@
 				sync: {
 					title: 'Synchronization',
 					value: 'fas fa-check',
-					tooltip: 'Tooltip content'
+					tooltip: 'Auto-sync on all devices',
+					color: 'blue',
 				},
 				vaults: {
 					title: 'Vaults available',
 					value: 1,
-					tooltip: 'Tooltip content'
+					tooltip: 'Arrange passwords in different vaults: personal, work, family, etc',
+					color: 'green',
 				},
 				multDevices: {
 					title: 'Multiple devices',
 					value: 'fas fa-check',
-					tooltip: 'Tooltip content'
 				},
 				passLimit: {
 					title: 'Passwod limit',
 					value: 20,
-					tooltip: 'Tooltip content'
 				},
 				crossPlat: {
 					title: 'Cross-platform',
 					value: 'fas fa-check',
-					tooltip: 'Tooltip content'
 				},
 				highSec: {
 					title: 'High security',
 					value: 'fas fa-check',
-					tooltip: 'Tooltip content'
 				},
 			},
 			button: {
@@ -47,32 +45,26 @@
 				sync: {
 					title: 'Synchronization',
 					value: 'fas fa-check',
-					tooltip: 'Tooltip content'
 				},
 				vaults: {
 					title: 'Vaults available',
 					value: 'fas fa-infinity',
-					tooltip: 'Tooltip content'
 				},
 				multDevices: {
 					title: 'Multiple devices',
 					value: 'fas fa-check',
-					tooltip: 'Tooltip content'
 				},
 				passLimit: {
 					title: 'Passwod limit',
 					value: 'fas fa-infinity',
-					tooltip: 'Tooltip content'
 				},
 				crossPlat: {
 					title: 'Cross-platform',
 					value: 'fas fa-check',
-					tooltip: 'Tooltip content'
 				},
 				highSec: {
 					title: 'High security',
 					value: 'fas fa-check',
-					tooltip: 'Tooltip content'
 				},
 			},
 			button: {
@@ -98,6 +90,9 @@ section.home-tariffs#plans-section
 							each field in tariff.fields
 								tr.tariff-item__table-row
 									td.tariff-item__table-cell #{field.title}
+										if field.tooltip
+											span.tariff-item__table-tooltip(data-bs-toggle="tooltip" data-bs-placement="right" title=field.tooltip class=(field.color ? 'tariff-item__table-tooltip--' + field.color : ''))
+												+icon('fa fa-info-circle')
 									td.tariff-item__table-value
 										if typeof field.value == 'number'
 											| #{field.value}
