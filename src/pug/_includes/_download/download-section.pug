@@ -7,37 +7,37 @@
 			buttons: [
 				{
 					title: 'Chrome',
-					icon: 'chrome.svg',
+					icon: 'chrome',
 					colorSet: 'gray',
 				},
 				{
 					title: 'Brave',
-					icon: 'brave.svg',
+					icon: 'brave',
 					colorSet: 'gray',
 				},
 				{
 					title: 'Opera',
-					icon: 'opera.svg',
+					icon: 'opera',
 					colorSet: 'gray',
 				},
 				{
 					title: 'Edge',
-					icon: 'edge.svg',
+					icon: 'edge',
 					colorSet: 'gray',
 				},
 				{
 					title: 'Yandex',
-					icon: 'yandex.svg',
+					icon: 'yandex',
 					colorSet: 'gray',
 				},
 				{
 					title: 'Firefox',
-					icon: 'firefox.svg',
+					icon: 'firefox',
 					colorSet: 'gray',
 				},
 				{
 					title: 'Safari',
-					icon: 'safari.svg',
+					icon: 'safari',
 					colorSet: 'gray',
 				},
 			],
@@ -128,7 +128,17 @@ section.download-section
 									a.download-section__btn.iconed-btn(href="#" class=(button.disabled ? 'is-disabled' : '') class=(button.colorSet ? 'download-section__btn--' + button.colorSet : ''))
 										if category.coloredIcons
 											span.iconed-btn__icon.iconed-btn__icon--img
-												img(src="img/icons/browsers/" + button.icon alt=button.title + " logo" width="30" height="30")
+												+coloredSprite(
+													'',
+													'browsers--' + button.icon,
+													button.title + " icon",
+													'',
+													{
+														width: 30,
+														height: 30,
+													}
+												)
+												//- img(src="img/icons/browsers/" + button.icon alt=button.title + " logo" width="30" height="30")
 										else
 											+icon(button.icon + ' iconed-btn__icon')
 										span.iconed-btn__text #{button.title}

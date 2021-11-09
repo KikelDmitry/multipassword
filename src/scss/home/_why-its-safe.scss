@@ -1,6 +1,6 @@
 .why-its-safe {
 	@include media-breakpoint-up(lg) {
-		background-image: linear-gradient(to right, red, red),
+		background-image: linear-gradient(to right, $color-violet-dark, $color-violet-dark),
 			linear-gradient(to right, $color-gray-lightest, $color-gray-lightest);
 		background-repeat: no-repeat;
 		background-size: 40% 100%, 60% 100%;
@@ -24,7 +24,7 @@
 		background-color: $color-violet-dark;
 		background-repeat: no-repeat;
 		background-image: url(#{$img-path}promo-bg-nm.svg);
-		background-position: -42px -53px;
+		background-position: 50% 50%;
 		background-size: 650px 450px;
 
 		@include media-breakpoint-up(md) {
@@ -36,29 +36,30 @@
 			background-position: right -81px top 26px, right -34px top 36px;
 			background-size: 387px 250px, 838px 591px;
 			min-height: 250px;
-			margin: 0;
-			padding: 0;
+			// margin: 0;
+			// padding: 0;
 			padding-top: 42px;
 			padding-bottom: 50px;
-		}
-		@include media-breakpoint-up(xl) {
-			position: relative;
-			min-height: 300px;
-			background-image: none;
-			overflow: hidden;
-			
+
 			&::after {
 				content: "";
+				display: block;
 				position: absolute;
-				top: 0;
+				top: 35px;
 				right: 0;
 				transform: translateX(100%);
-				display: block;
 				width: 18px;
 				height: 40px;
 				background-color: $color-violet-dark;
 				clip-path: polygon(0 0, 18px 20px, 0 40px);
 			}
+		}
+		@include media-breakpoint-up(xl) {
+			position: relative;
+			min-height: 300px;
+			background-size: auto;
+			// background-image: none;
+			// overflow: hidden;
 		}
 	}
 	&__title {
@@ -99,7 +100,7 @@
 		@include media-breakpoint-up(lg) {
 			margin: 0;
 			padding: 0;
-			padding-left: 10px;
+			padding-left: 30px;
 		}
 		@include media-breakpoint-up(xl) {
 			padding-left: 0;

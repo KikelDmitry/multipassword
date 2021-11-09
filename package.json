@@ -6,8 +6,8 @@
 	"private": true,
 	"license": "ISC",
 	"devDependencies": {
-		"autoprefixer": "^10.3.7",
-		"browser-sync": "^2.27.5",
+		"autoprefixer": "^10.4.0",
+		"browser-sync": "^2.27.7",
 		"del": "^6.0.0",
 		"gulp": "^4.0.2",
 		"gulp-concat": "^2.6.1",
@@ -21,9 +21,9 @@
 		"gulp-svgmin": "^4.1.0",
 		"imagemin-pngquant": "^9.0.2",
 		"node-sass-tilde-importer": "^1.0.2",
-		"postcss": "^8.3.9",
+		"postcss": "^8.3.11",
 		"postcss-csso": "^5.0.1",
-		"sass": "^1.43.2"
+		"sass": "^1.43.4"
 	},
 	"browserslist": [
 		"last 2 versions",

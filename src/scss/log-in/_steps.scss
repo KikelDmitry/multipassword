@@ -118,6 +118,10 @@
 					font-weight: bold;
 					color: $color-blue-darker;
 				}
+				&::after {
+					font-weight: bold;
+					box-shadow: 0 0 15px lighten($color-blue, 7%);
+				}
 			}
 		}
 	}

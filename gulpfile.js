@@ -133,7 +133,11 @@ exports.images = images;
 
 const svgsprite = () => {
 	return src(globs.sprite)
-		.pipe(svgmin())
+		// .pipe(svgmin({
+		// 	js2svg: {
+		// 		pretty: true
+		// 	}
+		// }))
 		.pipe(gulpSvgSprite({
 			mode: {
 				stack: {
@@ -142,7 +146,7 @@ const svgsprite = () => {
 			},
 		}
 		))
-		.pipe(dest(config.dest + 'img'));
+		.pipe(dest(config.dest + 'img/icons'));
 };
 exports.svgsprite = svgsprite;
 
@@ -155,16 +159,10 @@ const watcher = () => {
 	watch(config.src + 'pug/**/*.pug', pug)
 	watch(config.src + 'scss/**/*.scss', scss)
 	watch(globs.js, scripts)
-	// watch(globs.sprite, svgsprite)
+	watch(globs.sprite, svgsprite)
 	watch(globs.images, images)
 };
 
-const buildTree = () => {
-	console.log(dirTree('./', {
-		exclude: './build'
-	}))
-}
-exports.buildTree = buildTree;
 
 const clean = () => {
 	return del(config.dest + '**', { force: true })
@@ -179,7 +177,7 @@ exports.build = series(
 		pug,
 		scss,
 		scripts,
-		// svgsprite,
+		svgsprite,
 		images,
 		fonts
 	)
