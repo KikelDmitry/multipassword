@@ -1,4 +1,3 @@
-- homepage not completed
 - svg optimize (sprite, iconfont)
 - fix .iconed-btn
 - download page not completed

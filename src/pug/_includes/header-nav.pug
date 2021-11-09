@@ -22,7 +22,7 @@ nav.header-nav(class=(isHomepage ? 'header-nav--home' : ''))
 		each item in menu
 			li.header-nav__item
 				a.header-nav__link(href=item.url) #{item.title}
-	a.header-nav__signin(href="#")
+	a.header-nav__signin(href="signin_wide.html")
 		+icon('fas fa-sign-in-alt')
 		span Sign in
 	button.header-nav__burger.d-md-none#burger-btn(type="button" aria-label="Open menu")
