@@ -1,7 +1,7 @@
 -
 	var features = [
 		{
-			icon: 'sync.svg',
+			icon: 'sync',
 			title: 'Sync across devices',
 			text: 'MultiPassword works on different devices, from PCs to smartphones. Passwords automatically sync on all devices on which you\'re signed in.',
 			add: {
@@ -10,7 +10,7 @@
 			},
 		},
 		{
-			icon: 'import.svg',
+			icon: 'import',
 			title: 'Import web browser passwords',
 			text: 'MultiPassword allows you to import passwords from any web browser via a CSV file. No need to do manually add your passwords.',
 			add: {
@@ -19,7 +19,7 @@
 			},
 		},
 		{
-			icon: 'autofill.svg',
+			icon: 'autofill',
 			title: 'Autofill',
 			text: 'Logins, passwords, and other data from MultiPassword can autofill forms and fields on websites, social media, and other services.',
 			add: {
@@ -28,17 +28,17 @@
 			},
 		},
 		{
-			icon: 'strong.svg',
+			icon: 'strong',
 			title: 'Generate strong passwords',
 			text: 'Our built-in password generator, powered by modern technologies, will create a secure password for any website. You don\'t need to remember or write down complex combinations — just remember your master password.',
 		},
 		{
-			icon: 'trial.svg',
+			icon: 'trial',
 			title: 'Free 30-day trial',
 			text: 'MultiPassword\'s trial version lets you use all the password manager features without limits.',
 		},
 		{
-			icon: 'storage.svg',
+			icon: 'storage',
 			title: 'File storage',
 			text: 'Add up to 5 files of any format to each user account.',
 		},
@@ -50,7 +50,7 @@ section.features-section
 			.features-section__item.row.align-items-xl-center
 				.col-3.col-md-2
 					.features-section__icon
-						img.features-section__img(src="img/features/" + feature.icon alt=feature.title + " feature icon")
+						img.features-section__img(src="img/icons/colored-sprite.svg#features--" + feature.icon alt=feature.title + " feature icon")
 				.features-section__content.col-9.col-md-10
 					.row
 						div(class=(feature.add ? 'col-12 col-lg-6' : 'col-12'))

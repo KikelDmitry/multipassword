@@ -132,17 +132,7 @@ section.download-section
 									a.download-section__btn.iconed-btn(href=(button.isInactive ? false : '#') class=(button.colorSet ? 'download-section__btn--' + button.colorSet : '') class=(button.isInactive ? 'is-inactive' : ''))
 										if category.coloredIcons
 											span.iconed-btn__icon.iconed-btn__icon--img
-												+coloredSprite(
-													'',
-													'browsers--' + button.icon,
-													button.title + " icon",
-													'',
-													{
-														width: 30,
-														height: 30,
-													}
-												)
-												//- img(src="img/icons/browsers/" + button.icon + ".svg" alt=button.title + " logo" width="30" height="30")
+												img(src="img/icons/colored-sprite.svg#browsers--" + button.icon  alt=button.title + " logo" width="30" height="30")
 										else
 											+icon(button.icon + ' iconed-btn__icon')
 										span.iconed-btn__text #{button.title}

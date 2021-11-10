@@ -1,22 +1,22 @@
 -
 	var list = [
 		{
-			icon: 'hiw_doc.svg',
+			icon: 'hiw_doc',
 			text: 'Sign up MultiPassword',
 			description: 'You must remember your master password. This is the main password to MultiPassword and all data saved in it. If you lose it, your account can\'t be restored.',
 		},
 		{
-			icon: 'hiw_chat.svg',
+			icon: 'hiw_chat',
 			text: 'Add passwords',
 			description: 'The private key is MultiPassword\'s second stage of password protection. Use it to sign in to MultiPassword on various devices.',
 		},
 		{
-			icon: 'hiw_device.svg',
+			icon: 'hiw_device',
 			text: 'Use MultiPassword on any device',
 			description: 'You need the master password to access passwords and the private key to authenticate another device in the MultiPassword password manager.',
 		},
 		{
-			icon: 'hiw_bulb.svg',
+			icon: 'hiw_bulb',
 			text: 'The password manager will automatically prompt the right password',
 			description: 'We use RSA, AES-256, HKDF, PBKDF2 algorithms to protect and store passwords. These are modern end-to-end password encryption and decryption technologies. MultiPassword user data and passwords are never transferred to third-party servers; they are securely encrypted and protected from hacking.',
 		},
@@ -30,7 +30,7 @@ section.hiw-section
 					.col-12.col-lg-5
 						.hiw-item
 							.hiw-item__icon
-								img.hiw-item__icon-img(src="img/hiw/" + item.icon alt="How it's work icon")
+								img.hiw-item__icon-img(src="img/icons/colored-sprite.svg#hiw--" + item.icon alt="How it's work icon")
 							.hiw-item__text !{item.text.replace('MultiPassword', '<strong>MultiPassword</strong>')}
 					.col-12.col-lg-7
 						.hiw-description #{item.description}

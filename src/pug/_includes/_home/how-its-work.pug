@@ -1,19 +1,19 @@
 -
 	var list = [
 		{
-			icon: 'hiw_doc.svg',
+			icon: 'hiw_doc',
 			text: 'Sign up MultiPassword',
 		},
 		{
-			icon: 'hiw_chat.svg',
+			icon: 'hiw_chat',
 			text: 'Add passwords',
 		},
 		{
-			icon: 'hiw_device.svg',
+			icon: 'hiw_device',
 			text: 'Use MultiPassword on any device',
 		},
 		{
-			icon: 'hiw_bulb.svg',
+			icon: 'hiw_bulb',
 			text: 'The password manager will automatically prompt the right password',
 		},
 	];
@@ -29,7 +29,7 @@ section.how-its-work
 				li.col-12.col-md-6.col-xl-3
 					.hiw-item
 						.hiw-item__icon
-							img.hiw-item__icon-img(src="img/hiw/" + item.icon alt="How it's work icon")
+							img.hiw-item__icon-img(src="img/icons/colored-sprite.svg#hiw--" + item.icon alt="How it's work icon" width="42" height="42")
 						.hiw-item__text !{item.text.replace('MultiPassword', '<strong>MultiPassword</strong>')}
 
 

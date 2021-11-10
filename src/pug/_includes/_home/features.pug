@@ -1,19 +1,19 @@
 -
 	var features = [
 		{
-			icon: 'strong.svg',
+			icon: 'strong',
 			text: 'High security',
 		},
 		{
-			icon: 'sync.svg',
+			icon: 'sync',
 			text: 'Multiple devices',
 		},
 		{
-			icon: 'import.svg',
+			icon: 'import',
 			text: 'Synchronization',
 		},
 		{
-			icon: 'autofill.svg',
+			icon: 'autofill',
 			text: 'Convenient interface',
 		},
 	]
@@ -26,6 +26,6 @@ section.features-home
 				li.col-12.col-md-4.col-lg-3(class=(idx % 2 === 0 ? 'offset-md-2 offset-lg-0' : ''))
 					.home-feature
 						.home-feature__icon
-							img.home-feature__icon-img(src="img/features/" + feature.icon alt="Feature icon")
+							img.home-feature__icon-img(src="img/icons/colored-sprite.svg#features--" + feature.icon alt=feature.text + " feature icon")
 						.home-feature__text #{feature.text}
 		a.features-home__more.more-btn(href="#") Learn more 

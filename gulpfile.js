@@ -134,20 +134,26 @@ const images = () => {
 exports.images = images;
 
 const svgsprite = () => {
-	return src(globs.sprite)
-		// .pipe(svgmin({
-		// 	js2svg: {
-		// 		pretty: true
-		// 	}
-		// }))
-		.pipe(gulpSvgSprite({
-			mode: {
-				stack: {
-					sprite: '../colored-sprite.svg'  //sprite file name
-				}
+	let _config = {
+		shape: {
+			dimension: { 
+				maxWidth: 32,
+				maxHeight: 32
 			},
+		},
+		mode: {
+			stack: {
+				sprite: '../colored-sprite.svg',
+			}
 		}
-		))
+	}
+	return src(globs.sprite)
+		.pipe(svgmin({
+			js2svg: {
+				pretty: true
+			}
+		}))
+		.pipe(gulpSvgSprite(_config))
 		.pipe(dest(config.dest + 'img/icons'));
 };
 exports.svgsprite = svgsprite;
