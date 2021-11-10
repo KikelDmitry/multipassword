@@ -77,7 +77,6 @@ body {
 }
 .iconed-btn {
 	--size: 60px;
-	--trans-dur: 100ms;
 
 	display: flex;
 	align-items: center;
@@ -96,7 +95,6 @@ body {
 		justify-content: center;
 		align-items: center;
 		transform-origin: right center;
-		transition: text-shadow var(--trans-dur), font-size var(--trans-dur);
 
 		@include media-breakpoint-up(lg) {
 			font-size: rem(18);

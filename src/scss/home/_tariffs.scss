@@ -89,6 +89,7 @@
 			}
 		}
 		&-cell {
+			padding: 0 var(--bs-gutter-x);
 
 			@include media-breakpoint-up(md) {
 				padding: 0 30px;
