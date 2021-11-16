@@ -1,6 +1,7 @@
 .log-header {
 	--line-height: 64px;
 	margin-bottom: rem(40);
+	margin-top: rem(20);
 	background-image: linear-gradient(to right, $color-gray-lighter, $color-gray-lighter);
 	background-repeat: no-repeat;
 	background-size: calc(100% - var(--line-height) / 2) var(--line-height);

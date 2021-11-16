@@ -474,6 +474,11 @@ $color-cyan-deep-4: #1a9ab7;
 		i {
 			background-color: $color-violet-lighter;
 		}
+		span {
+			margin: 0;
+			padding: 0 1em;
+			text-align: center;
+		}
 	}
 }
 .steps-section {
@@ -531,12 +536,12 @@ $color-cyan-deep-4: #1a9ab7;
 		min-height: 345px;
 		padding-top: 36px;
 		background-color: $color-violet-dark;
-		background-image: url("#{$img-path}strong-pass_back.svg");
-		background-position: right bottom;
+		background-image: url("#{$img-path}logo-v2-pic.svg");
+		background-position: right bottom -110px;
 		background-repeat: no-repeat;
 
 		@include media-breakpoint-up(md) {
-			background-position: 60px bottom;
+			background-position: left 60px bottom -110px;
 		}
 		&::after {
 			@include media-breakpoint-up(md) {
