@@ -11,3 +11,7 @@ npm run dev
 ```
 npm run build
 ```
+
+## live:
+
+https://kikel.net/projects/multipassword/
